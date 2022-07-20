@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import MyNavbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
@@ -13,7 +13,7 @@ import AnonRoute from './components/AnonRoute';
 function App() {
 	return (
 		<div className="App">
-			<Navbar />
+			<MyNavbar />
 
 			<Routes>
 				<Route exact path="/" component={HomePage} />
