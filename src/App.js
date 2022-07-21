@@ -4,19 +4,21 @@ import MyNavbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
-
+import CatsList from './pages/cats';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute'; 
 import AnonRoute from './components/AnonRoute'; 
-
+import Main from './pages/main';
 function App() {
 	return (
-		<div className="App">
+		<div>
 			<MyNavbar />
-
+		
+			<div className="App">
+		
 			<Routes>
-				<Route exact path="/" component={HomePage} />
+				<Route exact path="/" element={<Main/>} />
 				<Route
 					exact
 					path="/projects"
@@ -36,7 +38,15 @@ function App() {
 						</PrivateRoute>
 					}
 				/>
-
+<Route
+					exact
+					path="/cats"
+					element={
+				
+							<CatsList />
+						
+					}
+				/>
 				<Route
 					exact
 					path="/signup"
@@ -56,6 +66,7 @@ function App() {
 					}
 				/>
 			</Routes>
+		</div>
 		</div>
 	);
 }

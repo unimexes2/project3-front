@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+
 import { useContext } from "react";                       // <== IMPORT 
 import { AuthContext } from "./../context/auth.context";  // <== IMPORT
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import logo from "./../pictures/logosite.png"
 function MyNavbar() {
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
@@ -13,9 +14,11 @@ function MyNavbar() {
     <nav>
     
     
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="primary-light" variant="light">
         <Container>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Nav.Link href="/"><img className ="logo"src={logo}/></Nav.Link>
+
+     
           <Nav className="me-auto">
            
            
@@ -36,8 +39,10 @@ function MyNavbar() {
       }
            
            
-            <Nav.Link href="#features">GATOS</Nav.Link>
+            <Nav.Link href="/cats">GATOS</Nav.Link>
             <Nav.Link href="#pricing">PERROS</Nav.Link>
+            <Nav.Link href="/login"> UBICACION </Nav.Link>
+            <Nav.Link href="/login"> CONTACTOS </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

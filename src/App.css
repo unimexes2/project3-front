@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url("./pictures/fondosmall.png");
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -35,4 +39,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+.logo{
+  max-width: 20%;
+  height: auto;
+}
+.imgtmbl {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 150px;
+  margin: 5px;
+  max-height: 300px ;
 }

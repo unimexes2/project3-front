@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  font-family: 'Shadows Into Light', serif
+
 }
 
 a {
@@ -22,10 +24,13 @@ label {
 
 input,
 textarea {
-  width: 200px;
+  width: 150px;
   padding: 10px;
   display: inline-block;
   margin: 10px;
+  height: 20px;
+  border: 2px solid red;
+  border-radius: 4px;
 }
 
 
@@ -34,6 +39,7 @@ nav li {
   color: white;
   font-size: 24px;
   font-weight: 600;
+  
 }
 
 .card {
