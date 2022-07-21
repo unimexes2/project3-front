@@ -7,6 +7,7 @@ import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import CatsList from './pages/cats';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
+import AddAnimal from './pages/AddAnimal';
 import PrivateRoute from './components/PrivateRoute'; 
 import AnonRoute from './components/AnonRoute'; 
 import Main from './pages/main';
@@ -18,6 +19,8 @@ function App() {
 			<div className="App">
 		
 			<Routes>
+				<Route exact path="/add" element={<AddAnimal />} />
+
 				<Route exact path="/" element={<Main/>} />
 				<Route
 					exact
@@ -38,7 +41,7 @@ function App() {
 						</PrivateRoute>
 					}
 				/>
-<Route
+				<Route
 					exact
 					path="/cats"
 					element={
