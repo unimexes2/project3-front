@@ -1,3 +1,5 @@
+import UncontrolledExample from "../components/carousel";
+
 
 function Main() {
  
@@ -49,7 +51,18 @@ function Main() {
         <div>
   
        </div>
-  
+       
+
+
+
+
+
+
+<UncontrolledExample/>
+
+
+
+       
        
   
   

@@ -14,7 +14,7 @@ function MyNavbar() {
     <nav>
     
     
-      <Navbar bg="primary-light" variant="light">
+      <Navbar bg="primary-light" variant="light" className="nav">
         <Container>
         <Nav.Link href="/"><img className ="logo"src={logo}/></Nav.Link>
 
@@ -26,23 +26,23 @@ function MyNavbar() {
             {isLoggedIn
         ? (<>
             <Nav.Link href="/projects">
-              <p>Projects</p>
+              <p className="menulink">Projects</p>
             </Nav.Link>
-            <p onClick={logOutUser}>Logout</p>
+            <p className="menulink" onClick={logOutUser}>Logout</p>
             <span>{user.name}</span>
           </>)
         : 
         (<>
-          <Nav.Link href="/signup"> Signup </Nav.Link>
-          <Nav.Link href="/login"> Login </Nav.Link>
+          <Nav.Link href="/signup" className="menulink"> Signup </Nav.Link>
+          <Nav.Link href="/login"className="menulink"> Login </Nav.Link>
         </>)
       }
            
            
-            <Nav.Link href="/cats">GATOS</Nav.Link>
-            <Nav.Link href="#pricing">PERROS</Nav.Link>
-            <Nav.Link href="/login"> UBICACION </Nav.Link>
-            <Nav.Link href="/login"> CONTACTOS </Nav.Link>
+            <Nav.Link href="/cats" className="menulink">GATOS</Nav.Link>
+            <Nav.Link href="#pricing" className="menulink">PERROS</Nav.Link>
+            <Nav.Link href="/login" className="menulink"> UBICACION </Nav.Link>
+            <Nav.Link href="/login" className="menulink"> CONTACTOS </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

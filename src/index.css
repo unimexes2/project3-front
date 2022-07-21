@@ -1,6 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Shadows Into Light', serif
+  font-family: 'Shadows Into Light', serif;
+  background-image: url("./pictures/fondosmall.png");
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
 
 }
 

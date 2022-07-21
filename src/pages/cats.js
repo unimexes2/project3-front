@@ -48,8 +48,8 @@ function CatsList(props) {
   };
   console.log()
   return (
-    <div style={{ display: 'flex' }}>
-      <div>
+    <div style={{ display: 'flex', }}>
+      <div style={{ backgroundColor:"white", border:"5px solid red" }}>
         <label> Buscar raza(case sensitive)</label>
         <input name="Search"
           onChange={(e) => doSearch(e.target.value)}
