@@ -42,10 +42,26 @@
   
 
 }
+.form-textarea{
+  height:200px;
+}
 
 h4{margin: 10px;
 font-size: 200%;
 text-align: justify;
+}
+.addForm{
+display: flex;
+justify-self: left;
+max-width:200px ;
+padding :10px;
+align-items: center;
+max-height: 400px;
+flex-wrap: wrap;
+flex-direction: column;
+
+
+
 }
 
 .nav{border-bottom : 5px solid #a18d8c;
@@ -61,6 +77,13 @@ text-align: justify;
 
 
 }
+.form-upload{
+  height:50px;
+}
+
+
+
+
 .menulink{
   color:#984706;
   color: blue;
@@ -106,3 +129,17 @@ p::first-letter {
 margin:15px;
 align-self: center;
 }
+.addanimal{
+display: flex;
+flex-direction: column;
+width:200px ;
+
+
+
+
+}
+.btn-success{
+  
+
+  width: 200px;
+  }
