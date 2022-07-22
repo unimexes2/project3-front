@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import CatsList from './pages/cats';
+import DogsList from './pages/dogs';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import AddAnimal from './pages/AddAnimal';
@@ -47,6 +48,15 @@ function App() {
 					element={
 				
 							<CatsList />
+						
+					}
+				/>
+								<Route
+					exact
+					path="/dogs"
+					element={
+				
+							<DogsList />
 						
 					}
 				/>

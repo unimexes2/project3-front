@@ -1,91 +1,89 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-function CatsList(props) {
-  var [cats, setCats] = useState([]);
+function DogsList(props) {
+  var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])
 
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/cats")
+      .get("http://localhost:3000/dogs")
       .then((response) => {
 
-        setCats([...response.data]);
+        setDogs([...response.data]);
         setSearch([...response.data]);
       });
   }, []);
 
 
   const doSearchByBreed = (element) => {
-    cats = [...search];
+    dogs = [...search];
     console.log("serch", search)
-    let searchResult = cats.filter((cat) => {
-      // console.log(cat.name, "cat name", element)
-      if (cat.breed.toLowerCase().includes(element.toLowerCase())) {
-        return cat
+    let searchResult = dogs.filter((dog) => {
+      if (dog.breed.toLowerCase().includes(element.toLowerCase())) {
+        return dog
       }
 
     })
 
-    setCats(searchResult);
+    setDogs(searchResult);
 
   };
 
   const doSearchBySize = (element) => {
-    cats = [...search];
+    dogs = [...search];
     console.log("search", search)
-    let searchResult = cats.filter((cat) => {
-      let catWeight = cat.weight
+    let searchResult = dogs.filter((dog) => {
+      let dogWeight = dog.weight
       switch (element) {
           case 'pequeño':
-            return catWeight < 5;
+            return dogWeight < 5;
             break;
           case 'mediano':
-            return catWeight > 5 && catWeight < 10;
+            return dogWeight > 5 && dogWeight < 10;
             break;
           case 'grande':
-              return catWeight > 10;
+              return dogWeight > 10;
             break;
           default:
-            return catWeight
+            return dogWeight
             break;
         }
 
     })
 
-    setCats(searchResult);
+    setDogs(searchResult);
 
   };
 
   const doSearchByAge = (element) => {
-    cats = [...search];
+    dogs = [...search];
     console.log("search", search)
-    let searchResult = cats.filter((cat) => {
-      let catAge = cat.age
+    let searchResult = dogs.filter((dog) => {
+      let dogAge = dog.age
       switch (element) {
           case 'cachorro':
-            return catAge < 5;
+            return dogAge < 5;
             break;
           case 'joven':
-            return catAge > 5 && catAge < 10;
+            return dogAge > 5 && dogAge < 10;
             break;
           case 'adulto':
-            return catAge > 10
+            return dogAge > 10
             break;
           default:
-            return catAge;
+            return dogAge;
             break;
         }
 
     })
 
-    setCats(searchResult);
+    setDogs(searchResult);
 
   };
 
 
 
-  console.log(cats)
   const mystyle = {
     color: "white",
     backgroundColor: "DodgerBlue",
@@ -128,7 +126,7 @@ function CatsList(props) {
 
       <div className="list-group" style={{ height: '600px', display: 'flex', flexDirection: 'row', flexWrap: "wrap" }}>
 
-        {cats.map((cat) => {
+        {dogs.map((dog) => {
 
 
 
@@ -139,13 +137,13 @@ function CatsList(props) {
 
           return (
             <div>
-              <img className="imgtmbl" src={cat.profilePicture} />
-              <a href={"/cat/" + cat._id}>  
-              <h4>{cat.name}</h4></a>
-              <h6>Breed: {cat.breed}</h6>
-              <h6>Description:{cat.description}</h6>
-              <h6>Weight:{cat.weight}</h6>
-              <h6>Age:{cat.age}</h6>
+              <img className="imgtmbl" src={dog.profilePicture} />
+              <a href={"/dog/" + dog._id}>  
+              <h4>{dog.name}</h4></a>
+              <h6>Breed: {dog.breed}</h6>
+              <h6>Description:{dog.description}</h6>
+              <h6>Weight:{dog.weight}</h6>
+              <h6>Age:{dog.age}</h6>
             </div>
           );
 
@@ -163,4 +161,4 @@ function CatsList(props) {
   )
 }
 
-export default CatsList;
+export default DogsList;

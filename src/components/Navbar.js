@@ -41,7 +41,7 @@ function MyNavbar() {
            
            
             <Nav.Link href="/cats" className="menulink">GATOS</Nav.Link>
-            <Nav.Link href="#pricing" className="menulink">PERROS</Nav.Link>
+            <Nav.Link href="/dogs" className="menulink">PERROS</Nav.Link>
             <Nav.Link href="/login" className="menulink"> UBICACION </Nav.Link>
             <Nav.Link href="/login" className="menulink"> CONTACTOS </Nav.Link>
           </Nav>
