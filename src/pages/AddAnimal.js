@@ -51,9 +51,9 @@ const AddAnimal = () => {
   };
   return (
     <div>
-      <div className="beerForm">
-        <form className="beerFormDataForm" onSubmit={handleSubmit}>
-
+      
+        <form  className="addanimal" onSubmit={handleSubmit}>
+        <div className="addForm">
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
             <select value={type} onChange={handleSelect}>
@@ -83,9 +83,9 @@ const AddAnimal = () => {
           </div>
           <div className="displayColumn">
             <label className="labelLeftBold">Age: </label>
-            <textarea
+            <input
               className="form-controlTA"
-              type="text"
+              type="number"
               name="age"
               onChange={(e) => setAge(e.target.value)}
               value={age}
@@ -94,8 +94,8 @@ const AddAnimal = () => {
           <div className="displayColumn">
             <label className="labelLeftBold">Weight </label>
             <input
-              className="form-control"
-              type="text"
+              className="form-controlTA"
+              type="number"
               name="weight"
               onChange={(e) => setWeight(e.target.value)}
               value={weight}
@@ -104,7 +104,7 @@ const AddAnimal = () => {
           <div className="displayColumn">
             <label className="labelLeftBold">Profile Picture: </label>
             <input
-              className="form-control"
+              className="form-upload"
               type="file"
               name="profilePicture"
               accept="image/png, image/jpeg"
@@ -115,7 +115,7 @@ const AddAnimal = () => {
           <div className="displayColumn">
             <label className="labelLeftBold">Pictures: </label>
             <input
-              className="form-control"
+              className="form-upload"
               type="file"
               name="pictures"
               accept="image/png, image/jpeg"
@@ -125,8 +125,8 @@ const AddAnimal = () => {
           </div>
           <div className="displayColumn">
             <label className="labelLeftBold">Description: </label>
-            <input
-              className="form-control"
+            <textarea
+              className="form-textarea"
               type="text"
               name="description"
               onChange={(e) => setDescription(e.target.value)}
@@ -137,7 +137,7 @@ const AddAnimal = () => {
             <label className="labelLeftBold">Admition Date: </label>
             <input
               className="form-control"
-              type="text"
+              type="date"
               name="admitionDate"
               onChange={(e) => setAdmitionDate(e.target.value)}
               value={admitionDate}
@@ -153,12 +153,14 @@ const AddAnimal = () => {
               value={views}
             />
           </div>
-          <button type="submit" className="btn-danger">
+         
+        </div>
+        <button type="submit" className="btn-success">
             ADD
           </button>
         </form>
       </div>
-    </div>
+  
   );
 };
 

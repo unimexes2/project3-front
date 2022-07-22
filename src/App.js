@@ -12,6 +12,7 @@ import AddAnimal from './pages/AddAnimal';
 import PrivateRoute from './components/PrivateRoute'; 
 import AnonRoute from './components/AnonRoute'; 
 import Main from './pages/main';
+import Map from './pages/map';
 function App() {
 	return (
 		<div>
@@ -51,12 +52,21 @@ function App() {
 						
 					}
 				/>
+
 								<Route
 					exact
 					path="/dogs"
 					element={
 				
 							<DogsList />
+
+					<Route
+					exact
+					path="/map"
+					element={
+				
+							<Map/>
+
 						
 					}
 				/>
