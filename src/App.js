@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import CatsList from './pages/cats';
+// import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -36,15 +37,6 @@ function App() {
 
 				<Route
 					exact
-					path="/projects/:id"
-					element={
-						<PrivateRoute>
-							<ProjectDetailsPage />
-						</PrivateRoute>
-					}
-				/>
-				<Route
-					exact
 					path="/cats"
 					element={
 				
@@ -52,8 +44,19 @@ function App() {
 						
 					}
 				/>
+<<<<<<< Updated upstream
 
 								<Route
+=======
+				{/* <Route
+					exact
+					path="/cat/:catId"
+					element={
+							<CatCard />
+					}
+				/> */}
+				<Route
+>>>>>>> Stashed changes
 					exact
 					path="/dogs"
 					element={

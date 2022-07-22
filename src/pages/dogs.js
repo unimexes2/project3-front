@@ -38,16 +38,16 @@ function DogsList(props) {
       switch (element) {
           case 'pequeño':
             return dogWeight < 5;
-            break;
+            
           case 'mediano':
             return dogWeight > 5 && dogWeight < 10;
-            break;
+            
           case 'grande':
               return dogWeight > 10;
-            break;
+            
           default:
             return dogWeight
-            break;
+          
         }
 
     })
@@ -64,16 +64,16 @@ function DogsList(props) {
       switch (element) {
           case 'cachorro':
             return dogAge < 5;
-            break;
+          
           case 'joven':
             return dogAge > 5 && dogAge < 10;
-            break;
+          
           case 'adulto':
             return dogAge > 10
-            break;
+           
           default:
             return dogAge;
-            break;
+       
         }
 
     })
