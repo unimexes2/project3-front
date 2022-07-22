@@ -1,51 +1,25 @@
-import UncontrolledExample from "../components/carousel";
+import CarouselBasement  from "../components/carousel";
 
-
+import protectlogo from "../pictures/protectora.png"
 function Main() {
  
  
  
     return (
       
-      <div>
+      <div className="main-container">
    
-        <a style={{ display: "flex", margin: "auto" }} href="/beers">
           <div className="container1">
            
-            <div className="content1">
-               <h4>Beers</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                q </p>
-            </div>
+            <img className="imagetext" src={protectlogo}/>
+              <h4 className="main-text">L'associació Amics dels Animals de Palafolls és una entitat sense ànim de lucre constituida al 
+                2007 amb el propòsit de donar atenció a aquells gossos i gats que han estat abandonats a Palafolls i proporcinar-los-hi una nova llar i siguin tractats de la manera que els corresponen: amb atenció i estima.
+Som voluntaries que realitzem aquesta tasca desinteressadament, 
+invertint el nostre temps personal intentant sol·lucionar els problemes dels abandonaments,
+ maltractaments i accidents dels animals de la nostra població. </h4>
+                  
   
           </div>
-  
-        </a>
-        <a style={{ display: "flex", margin: "auto" }} href="/addbeer">
-          <div className="container1">
-           
-            <div className="content1">
-            <h4>New Beer</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                q </p>
-            </div>
-  
-          </div>
-  
-        </a>
-        <a style={{ display: "flex", margin: "auto" }} href="/randombeer">
-          <div className="container1">
-           
-            <div className="content1">
-            <h4>Random Beer</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                q </p>
-            </div>
-         </div>
-        </a>
   
   
         <div>
@@ -58,7 +32,7 @@ function Main() {
 
 
 
-<UncontrolledExample/>
+<CarouselBasement/>
 
 
 
