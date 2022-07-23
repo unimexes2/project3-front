@@ -14,6 +14,8 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute'; 
 import Main from './pages/main';
 import Map from './pages/map';
+import CatCard from './pages/catCard';
+
 function App() {
 	return (
 		<div>
@@ -44,24 +46,24 @@ function App() {
 						
 					}
 				/>
-<<<<<<< Updated upstream
+
 
 								<Route
-=======
-				{/* <Route
+
+				 
 					exact
 					path="/cat/:catId"
 					element={
 							<CatCard />
 					}
-				/> */}
+				/> 
 				<Route
->>>>>>> Stashed changes
+
 					exact
 					path="/dogs"
 					element={
 				
-							<DogsList />
+							<DogsList /> }/>
 
 					<Route
 					exact
