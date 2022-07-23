@@ -1,7 +1,8 @@
 import axios from 'axios';
-
+console.log(process.env.REACT_APP_API_URL,"base URI")
 const service = axios.create({
-	baseURL: `${process.env.REACT_APP_API_URL}`
+	
+	baseURL: `${"base url",process.env.REACT_APP_API_URL}`
 });
 
 //enviar el token en cada request que haga el usuario para checkear

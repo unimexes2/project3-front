@@ -131,13 +131,13 @@ function DogsList(props) {
 
 
 
-
+console.log(dog)
 
 
 
           return (
             <div>
-              <img className="imgtmbl" src={dog.profilePicture} />
+              <img className="imgtmbl" src={dog.pictures[0]} />
               <a href={"/dog/" + dog._id}>  
               <h4>{dog.name}</h4></a>
               <h6>Breed: {dog.breed}</h6>

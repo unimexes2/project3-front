@@ -5,6 +5,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 const AuthContext = React.createContext();
 
 function AuthProviderWrapper(props) {
+	console.log(API_URL,"url auth")
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ user, setUser ] = useState(null);
@@ -13,13 +14,15 @@ function AuthProviderWrapper(props) {
 	const verifyStoredToken = () => {
 		// Get the stored token from the localStorage
 		const storedToken = localStorage.getItem('authToken');
-
+        console.log(storedToken,"tocken stored")
 		// If the token exists in the localStorage
-		if (storedToken) {
+		if (storedToken) {debugger
 			// We must send the JWT token in the request's "Authorization" Headers
 			axios
-				.get(`${API_URL}/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
+				.get(`${API_URL}/api/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
 				.then((response) => {
+					debugger
+					console.log(response,"tocken")
 					// If the server verifies that JWT token is valid  ✅
 					const user = response.data;
 					setUser(user);

@@ -1,6 +1,6 @@
 import service from './service';
 
-const URL = '/auth';
+const URL = '/api/auth';
 
 const signupService = (user) => {
 	return service.post(`${URL}/signup`, user);

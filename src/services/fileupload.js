@@ -12,11 +12,6 @@ const errorHandler = (err) => {
   throw err;
 };
 
-const getMovies = () => {
-  return api.get("/movies")
-    .then((res) => res.data)
-    .catch(errorHandler);
-};
 
 const uploadImage = (file) => {
   return api.post("/upload", file)
@@ -24,14 +19,5 @@ const uploadImage = (file) => {
     .catch(errorHandler);
 };
 
-const createMovie = (newMovie) => {
-  return api.post("/movies", newMovie)
-    .then(res => res.data)
-    .catch(errorHandler);
-};
 
-export default {
-  getMovies,
-  uploadImage,
-  createMovie
-};
+export default  uploadImage

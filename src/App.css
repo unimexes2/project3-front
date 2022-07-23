@@ -143,3 +143,35 @@ width:200px ;
 
   width: 200px;
   }
+  .preview{
+    max-width:75px ;
+  }
+
+  .img-wrap {
+    position: relative;
+    display: inline-block;
+    border: 1px red solid;
+    font-size: 0;
+    margin :15px;
+    padding:10px;
+    background-color: #984706;
+}
+.img-wrap .close {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 5px 2px 2px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+}
+.img-wrap:hover .close {
+    opacity: 1;
+}
