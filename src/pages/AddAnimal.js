@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import fileupload from "../services/fileupload";
 const AddAnimal = () => {
+
+  const [imageUrl, setImageUrl] = useState("");
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [age, setAge] = useState(0);
@@ -36,7 +38,10 @@ const AddAnimal = () => {
       admitionDate: admitionDate,
       views: views,
     };
-    axios.post("http://localhost:3000/add", body).then((response) => {
+    axios({
+      // make sure you use PORT = 5005 (the port where our server is running)
+      baseURL: "http://localhost:3000/add"})
+      .post("http://localhost:3000/add", body).then((response) => {
       setType("")
       setName("");
       setBreed("");
@@ -49,6 +54,62 @@ const AddAnimal = () => {
       setViews("");
     });
   };
+
+
+ 
+
+  const handleFileUpload = (e) => {
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
+ 
+    const uploadData = new FormData();
+ 
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+ 
+
+  // make sure you use PORT = 5005 (the port where our server is running)
+
+
+      axios.post("http://localhost:3000/upload", uploadData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+    })
+
+
+      .then(response=>console.log(response))
+     /* .uploadImage(uploadData)
+      .then(response => {
+      console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.fileUrl);
+      })*/
+      .catch(err => console.log("Error while uploading the file: ", err));
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       
@@ -101,7 +162,7 @@ const AddAnimal = () => {
               value={weight}
             />
           </div>
-          <div className="displayColumn">
+ {/*}     <div className="displayColumn">
             <label className="labelLeftBold">Profile Picture: </label>
             <input
               className="form-upload"
@@ -112,16 +173,20 @@ const AddAnimal = () => {
               value={profilePicture}
             />
           </div>
+
+  */}
           <div className="displayColumn">
-            <label className="labelLeftBold">Pictures: </label>
+            <label className="labelLeftBold">Pictu  res: </label>
+           
             <input
               className="form-upload"
               type="file"
               name="pictures"
               accept="image/png, image/jpeg"
-              onChange={(e) => setPictures(e.target.value)}
-              value={pictures}
-            />
+              onChange={(e) => handleFileUpload(e)}
+              
+               />
+
           </div>
           <div className="displayColumn">
             <label className="labelLeftBold">Description: </label>
