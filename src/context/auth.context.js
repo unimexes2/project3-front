@@ -16,12 +16,12 @@ function AuthProviderWrapper(props) {
 		const storedToken = localStorage.getItem('authToken');
         console.log(storedToken,"tocken stored")
 		// If the token exists in the localStorage
-		if (storedToken) {debugger
+		if (storedToken) {
 			// We must send the JWT token in the request's "Authorization" Headers
 			axios
 				.get(`${API_URL}/api/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
 				.then((response) => {
-					debugger
+					
 					console.log(response,"tocken")
 					// If the server verifies that JWT token is valid  ✅
 					const user = response.data;

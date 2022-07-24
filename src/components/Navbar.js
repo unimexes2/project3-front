@@ -26,11 +26,12 @@ console.log(isLoggedIn)
            
           {isLoggedIn
         ? (<>
-            <Nav.Link href="/add">
-              <p className="menulink">Add animal</p>
+          
+            <Nav.Link className="menulink" onClick={logOutUser}>LOGOUT {user.name}</Nav.Link>
+           
+             <Nav.Link href="/add" className="menulink">
+              ADD ANIMAL
             </Nav.Link>
-            <p className="menulink" onClick={logOutUser}>Logout</p>
-            <span>{user.name}</span>
           </>)
         : 
         (<></>)
@@ -40,6 +41,9 @@ console.log(isLoggedIn)
             <Nav.Link href="/cats" className="menulink">GATOS</Nav.Link>
 
             <Nav.Link href="/dogs" className="menulink">PERROS</Nav.Link>
+            <Nav.Link href="/stories" className="menulink">HISTORIAS</Nav.Link>
+            <Nav.Link href="/stories" className="menulink">YA TIENEN FAMILIA</Nav.Link>
+            <Nav.Link href="/donate" className="menulink">DONACIONES</Nav.Link>
             <Nav.Link href="/login" className="menulink"> UBICACION </Nav.Link>
             <Nav.Link href="/login" className="menulink"> CONTACTOS </Nav.Link>
           </Nav>

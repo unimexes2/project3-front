@@ -143,7 +143,7 @@ function CatsList(props) {
               <h6>Description:{cat.description}</h6>
               <h6>Weight:{cat.weight}</h6>
               <h6>Age:{cat.age}</h6>
-            </div>
+              </div>
           );
 
         })}

@@ -1,24 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import fileupload from "../services/fileupload";
+
 const AddAnimal = () => {
 
-  const [imageUrl, setImageUrl] = useState("");
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
   const [profilePicture, setProfilePicture] = useState("");
- 
+
   const [description, setDescription] = useState("");
   const [admitionDate, setAdmitionDate] = useState(0);
   const [views, setViews] = useState(0);
   const [type, setType] = useState("dog");
-  const [foto, setFoto] =useState([])
-  const fotoArr=[];
-  
+  const [foto, setFoto] = useState([])
+  const fotoArr = [];
+
   const handleSelect = e => {
     setType(e.target.value);
     console.log("selected", e.target.value);
@@ -27,9 +25,9 @@ const AddAnimal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("type is",type);
-    let addStr=""
-if (type==="dog"){addStr="adddog"}else{addStr="addcat"}
+    console.log("type is", type);
+    let addStr = ""
+    if (type === "dog") { addStr = "adddog" } else { addStr = "addcat" }
     const body = {
       name: name,
       breed: breed,
@@ -48,8 +46,8 @@ if (type==="dog"){addStr="adddog"}else{addStr="addcat"}
 
 
 
-    axios.post("http://localhost:3000/"+addStr, body).then((response) => {
-        console.log(response,"resp")
+    axios.post("http://localhost:3000/" + addStr, body).then((response) => {
+      console.log(response, "resp")
       setType("")
       setName("");
       setBreed("");
@@ -65,69 +63,52 @@ if (type==="dog"){addStr="adddog"}else{addStr="addcat"}
 
 
   const handleFileUpload = (e) => {
-   // console.log("The file to be uploaded is: ", e.target.files[0]);
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.files[0]);
-        axios.post("http://localhost:3000/upload", uploadData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-      })
-       .then(response=>{console.log("server says",response)
-       fotoArr.push( response.data.fileUrl)
-       setFoto(foto => [...foto,response.data.fileUrl] )
-      
+    axios.post("http://localhost:3000/upload", uploadData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
       }
-       
-       )
-       .catch(err => console.log("Error while uploading the file: ", err));
-    };
- 
- 
-    useEffect(() => {
-     
-  },[foto])
+    })
+      .then(response => {
+        console.log("server says", response)
+        fotoArr.push(response.data.fileUrl)
+        setFoto(foto => [...foto, response.data.fileUrl])
 
-  const deletePrevImg=((event)=>{
-    console.log("event",event.target.id )
-    let deletedArr=foto.filter((el)=>{
-      console.log("elem",el)
-   
-      if (el===event.target.id){}else{return el}
-      
-            })
+      }
 
-            setFoto([...deletedArr] )        
-   
-      
-    
-    
-    
-    
+      )
+      .catch(err => console.log("Error while uploading the file: ", err));
+  };
+
+
+  useEffect(() => {
+
+  }, [foto])
+
+  const deletePrevImg = ((event) => {
+    console.log("event", event.target.id)
+    let deletedArr = foto.filter((el) => {
+      console.log("elem", el)
+
+      if (el === event.target.id) { } else { return el }
+
     })
 
+    setFoto([...deletedArr])
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+  })
 
   return (
     <div>
-      
-        <form  className="addanimal" onSubmit={handleSubmit}>
+
+      <form className="addanimal" onSubmit={handleSubmit}>
         <div className="addForm">
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
@@ -176,20 +157,8 @@ if (type==="dog"){addStr="adddog"}else{addStr="addcat"}
               value={weight}
             />
           </div>
- {/*}     <div className="displayColumn">
-            <label className="labelLeftBold">Profile Picture: </label>
-            <input
-              className="form-upload"
-              type="file"
-              name="profilePicture"
-              accept="image/png, image/jpeg"
-              onChange={(e) => setProfilePicture(e.target.value)}
-              value={profilePicture}
-            />
-          </div>
+       
 
-  */}
-        
           <div className="displayColumn">
             <label className="labelLeftBold">Description: </label>
             <textarea
@@ -222,48 +191,48 @@ if (type==="dog"){addStr="adddog"}else{addStr="addcat"}
           </div>
           <div className="displayColumn">
             <label className="labelLeftBold">Pictures: </label>
-           
+
             <input
               className="form-upload"
               type="file"
               name="pictures"
               accept="image/png, image/jpeg"
               onChange={(e) => handleFileUpload(e)}
-              />
+            />
 
           </div>
 
           <h2>add foto</h2>
-      
-      <label>Your files</label>
-     
 
-     
-    {foto.map((image)=>{
-        return(
-          <div className="img-wrap" id={image}>
-<span
-onClick={deletePrevImg} className="close"id={image}>&times;</span>
-<img className="preview" src={image}/>
-
-</div>
-
-
-        );
+          <label>Your files</label>
 
 
 
-    })}
-         
+          {foto.map((image) => {
+            return (
+              <div className="img-wrap" id={image}>
+                <span
+                  onClick={deletePrevImg} className="close" id={image}>&times;</span>
+                <img className="preview" src={image} />
+
+              </div>
+
+
+            );
+
+
+
+          })}
+
         </div>
         <button type="submit" className="btn-success">
-            Save to server
-          </button>
-        </form>
+          Save to server
+        </button>
+      </form>
 
 
-      </div>
-  
+    </div>
+
   );
 };
 

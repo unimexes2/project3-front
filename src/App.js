@@ -15,7 +15,7 @@ import AnonRoute from './components/AnonRoute';
 import Main from './pages/main';
 import Map from './pages/map';
 import CatCard from './pages/catCard';
-
+import Stories from './pages/stories';
 function App() {
 	return (
 		<div>
@@ -64,6 +64,7 @@ function App() {
 					element={
 				
 							<DogsList /> }/>
+							<Route exact path="/stories" element={<Stories/>}/>
 
 					<Route
 					exact

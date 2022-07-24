@@ -1,10 +1,19 @@
 import CarouselBasement  from "../components/carousel";
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 import protectlogo from "../pictures/protectora.png"
 function Map() {
- 
- 
- 
+  const [mapId, setMap] = useState(null);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/map")
+      .then((response) => {
+
+        setMap([...response.data]);
+        
+      });
+  }, []);
+ console.log(mapId)
     return (
       
       <div className="main-container">
