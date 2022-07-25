@@ -32,6 +32,11 @@ console.log(isLoggedIn)
              <Nav.Link href="/add" className="menulink">
               ADD ANIMAL
             </Nav.Link>
+            <Nav.Link href="/addmap" className="menulink">
+              ADD MAP
+            </Nav.Link>
+
+
           </>)
         : 
         (<></>)

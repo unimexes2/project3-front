@@ -16,6 +16,7 @@ import Main from './pages/main';
 import Map from './pages/map';
 import CatCard from './pages/catCard';
 import Stories from './pages/stories';
+import AdMap from './pages/addmap';
 function App() {
 	return (
 		<div>
@@ -26,7 +27,7 @@ function App() {
 			<Routes>
 				<Route exact path="/add" element={<AddAnimal />} />
 
-				<Route exact path="/" element={<Main/>} />
+				
 				<Route
 					exact
 					path="/projects"
@@ -37,6 +38,7 @@ function App() {
 					}
 				/>
 
+<Route exact path="/addmap" element={<AdMap/>} />
 				<Route
 					exact
 					path="/cats"
