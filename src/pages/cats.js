@@ -156,9 +156,9 @@ function CatsList(props) {
               </Link>
 
               <h6>Breed: {cat.breed}</h6>
-              <h6>Description:{cat.description}</h6>
-              <h6>Weight:{cat.weight})</h6>
-              <h6>Age:{cat.age}</h6>
+              <h6>Description: {cat.description}</h6>
+              <h6>Weight: {cat.weight} Kg.</h6>
+              <h6>Age: {cat.age} years</h6>
 
               <button type="submit">Delete Cat</button>
               </div>

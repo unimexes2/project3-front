@@ -150,11 +150,11 @@ function DogsList(props) {
               <Link to={"/dog/" + dog._id}>  
               <h4>{dog.name}</h4>
               </Link>
-              
+
               <h6>Breed: {dog.breed}</h6>
-              <h6>Description:{dog.description}</h6>
-              <h6>Weight:{dog.weight})</h6>
-              <h6>Age:{dog.age}</h6>
+              <h6>Description: {dog.description}</h6>
+              <h6>Weight: {dog.weight} Kg.</h6>
+              <h6>Age: {dog.age} years</h6>
 
               <button type="submit">Delete Dog</button>
               </div>
