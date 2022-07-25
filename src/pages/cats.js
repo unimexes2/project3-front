@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";   
+import { useParams, useNavigate } from "react-router-dom";
+
 
 function CatsList(props) {
   var [cats, setCats] = useState([]);
   const [search, setSearch] = useState([])
+
+  const { id } = useParams();
 
 
   useEffect(() => {
@@ -84,9 +88,20 @@ function CatsList(props) {
 
   };
 
+  const deleteCat = (id) => {
+   
+    console.log(id, "llega")
+    axios
+      .delete(`http://localhost:3000/cats/`+id.target.id)
+      .then(() => {
+
+      })
+      .catch((err) => console.log(err));
+  };  
 
 
-  console.log(cats)
+
+
   const mystyle = {
     color: "white",
     backgroundColor: "DodgerBlue",
@@ -132,18 +147,19 @@ function CatsList(props) {
         {cats.map((cat) => { 
 
           return (
+            <form onSubmit={deleteCat} id={cat._id}>
             <div>
-              <img className="imgtmbl" src={cat.profilePicture} />
-
-              <Link to={`/cat/${cat._id}`}>  
-              <h4>{cat.name}</h4>
-              </Link>
-
+            <img className="imgtmbl" src={cat.pictures[0]} />
+              <a href={"/cat/" + cat._id}>  
+              <h4>{cat.name}</h4></a>
               <h6>Breed: {cat.breed}</h6>
               <h6>Description:{cat.description}</h6>
-              <h6>Weight:{cat.weight}</h6>
+              <h6>Weight:{cat.weight})</h6>
               <h6>Age:{cat.age}</h6>
+
+              <button type="submit">Delete Cat</button>
               </div>
+              </form>
           );
 
         })}
