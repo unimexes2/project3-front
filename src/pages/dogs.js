@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";   
+import { useParams, useNavigate } from "react-router-dom";
+
+
 function DogsList(props) {
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])
 
+  const { id } = useParams();
 
   useEffect(() => {
     axios
@@ -82,7 +87,16 @@ function DogsList(props) {
 
   };
 
+  const deleteDog = (id) => {
+   
+    console.log(id, "llega")
+    axios
+      .delete(`http://localhost:3000/dogs/`+id.target.id)
+      .then(() => {
 
+      })
+      .catch((err) => console.log(err));
+  }; 
 
   const mystyle = {
     color: "white",
@@ -128,23 +142,20 @@ function DogsList(props) {
 
         {dogs.map((dog) => {
 
-
-
-
-console.log(dog)
-
-
-
           return (
+            <form onSubmit={deleteDog} id={dog._id}>
             <div>
-              <img className="imgtmbl" src={dog.pictures[0]} />
+            <img className="imgtmbl" src={dog.pictures[0]} />
               <a href={"/dog/" + dog._id}>  
               <h4>{dog.name}</h4></a>
               <h6>Breed: {dog.breed}</h6>
               <h6>Description:{dog.description}</h6>
-              <h6>Weight:{dog.weight}</h6>
+              <h6>Weight:{dog.weight})</h6>
               <h6>Age:{dog.age}</h6>
-            </div>
+
+              <button type="submit">Delete Dog</button>
+              </div>
+              </form>
           );
 
         })}
