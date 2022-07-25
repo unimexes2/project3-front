@@ -12,9 +12,11 @@ const AdMap =()=>{
         e.preventDefault();
        
         let addStr = "addmap"
-       
-        const body = {
-            mapCode:  mapCode,
+       let mapCode1= mapCode.replace( /https:\/\/www\.google\.com\//i,'')
+       console.log("mapstring", mapCode)
+       debugger
+       const body = {
+            mapCode:  mapCode1,
             description: description,
          
         };

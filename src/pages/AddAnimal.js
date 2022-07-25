@@ -11,7 +11,7 @@ const AddAnimal = () => {
   const [profilePicture, setProfilePicture] = useState("");
 
   const [description, setDescription] = useState("");
-  const [admitionDate, setAdmitionDate] = useState(0);
+  const [admitionDate, setAdmitionDate] = useState("");
   const [views, setViews] = useState(0);
   const [type, setType] = useState("dog");
   const [foto, setFoto] = useState([])
