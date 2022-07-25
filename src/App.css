@@ -175,3 +175,17 @@ width:200px ;
 .img-wrap:hover .close {
     opacity: 1;
 }
+.menulinkadmin{
+  font-size: xx-large;
+  font-family: cursive;
+ 
+  margin: auto;
+
+  text-decoration: underline overline;
+  text-decoration-color: green;
+  
+}
+.inputreturn{
+
+  font-family: cursive;
+}

@@ -9,18 +9,19 @@ function Map() {
       .get("http://localhost:3000/map")
       .then((response) => {
 
-        setMap([...response.data]);
+        console.log(response.data[0].mapCode)
+
+        setMap(response.data[0].mapCode);
         
       });
   }, []);
- console.log(mapId)
+
     return (
       
       <div className="main-container">
    
-  
 
-   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rxO2NbzzPb1LoN5OhNJLP0dEBT3KNCI&ehbc=2E312F" width="640" height="480"></iframe>
+   <iframe src={mapId} width="640" height="480"></iframe>
 
 
 

@@ -28,8 +28,9 @@ const AdMap =()=>{
         };
 
 
-        return(<div>
-           <div className="displayColumn">
+        return(<div className="inputreturn">
+             <form className="addanimal" onSubmit={handleSubmit}>
+           <div className="displayColumn" style={{"max-width":"600px"}}>
             <label className="labelLeftBold">Google map link string </label>
             <input
               className="form-control"
@@ -40,16 +41,24 @@ const AdMap =()=>{
             />
              </div>
          
-          <div className="displayColumn">
+          <div className="displayColumn"style={{"max-width":"600px"}}>
             <label className="labelLeftBold">Description</label>
-            <input
+            <textarea
+             rows="4"
+              cols="50"
               className="form-control"
               type="text"
               name="description"
               onChange={(e) => setDescription(e.target.value)}
               value={description}
+              style={{"heigth":"600px"}}
             />
              </div>
+             <button type="submit" className="btn-success">
+          Save to server
+        </button>
+
+        </form>
 
 
 

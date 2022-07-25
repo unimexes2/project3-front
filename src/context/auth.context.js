@@ -14,7 +14,7 @@ function AuthProviderWrapper(props) {
 	const verifyStoredToken = () => {
 		// Get the stored token from the localStorage
 		const storedToken = localStorage.getItem('authToken');
-        console.log(storedToken,"tocken stored")
+       // console.log(storedToken,"tocken stored")
 		// If the token exists in the localStorage
 		if (storedToken) {
 			// We must send the JWT token in the request's "Authorization" Headers
@@ -22,7 +22,7 @@ function AuthProviderWrapper(props) {
 				.get(`${API_URL}/api/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
 				.then((response) => {
 					
-					console.log(response,"tocken")
+					//console.log(response,"tocken")
 					// If the server verifies that JWT token is valid  ✅
 					const user = response.data;
 					setUser(user);

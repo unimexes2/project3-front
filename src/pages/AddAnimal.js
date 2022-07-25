@@ -106,7 +106,7 @@ const AddAnimal = () => {
   })
 
   return (
-    <div>
+    <div className="inputreturn">
 
       <form className="addanimal" onSubmit={handleSubmit}>
         <div className="addForm">
@@ -202,9 +202,9 @@ const AddAnimal = () => {
 
           </div>
 
-          <h2>add foto</h2>
 
-          <label>Your files</label>
+
+          <label>Your pictures</label>
 
 
 
