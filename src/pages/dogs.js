@@ -146,8 +146,11 @@ function DogsList(props) {
             <form onSubmit={deleteDog} id={dog._id}>
             <div>
             <img className="imgtmbl" src={dog.pictures[0]} />
-              <a href={"/dog/" + dog._id}>  
-              <h4>{dog.name}</h4></a>
+
+              <Link to={"/dog/" + dog._id}>  
+              <h4>{dog.name}</h4>
+              </Link>
+              
               <h6>Breed: {dog.breed}</h6>
               <h6>Description:{dog.description}</h6>
               <h6>Weight:{dog.weight})</h6>

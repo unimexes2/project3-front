@@ -150,8 +150,11 @@ function CatsList(props) {
             <form onSubmit={deleteCat} id={cat._id}>
             <div>
             <img className="imgtmbl" src={cat.pictures[0]} />
-              <a href={"/cat/" + cat._id}>  
-              <h4>{cat.name}</h4></a>
+
+              <Link to={"/cat/" + cat._id}>  
+              <h4>{cat.name}</h4>
+              </Link>
+
               <h6>Breed: {cat.breed}</h6>
               <h6>Description:{cat.description}</h6>
               <h6>Weight:{cat.weight})</h6>
