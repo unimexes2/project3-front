@@ -17,6 +17,8 @@ import Map from "./pages/map";
 import DogDetails from "./pages/DogDetails";
 import Stories from "./pages/stories";
 import AdMap from "./pages/addmap";
+import EditDogPage from "./pages/EditDogPage";
+
 function App() {
   return (
     <div>
@@ -39,8 +41,9 @@ function App() {
           <Route exact path="/addmap" element={<AdMap />} />
           <Route exact path="/cats" element={<CatsList />} />
 
-          <Route exact path="/dog/:dogId" element={<DogDetails />} />
           <Route exact path="/dogs" element={<DogsList />} />
+          <Route exact path="/dog/:dogId" element={<DogDetails />} />
+		  <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
 
           <Route exact path="/stories" element={<Stories />} />
 

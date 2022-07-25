@@ -28,9 +28,9 @@ function DogDetails() {
         <>
           <h1>Name: {dog.name}</h1>
           <p>Breed: {dog.breed}</p>
-          <p>Description:{dog.description}</p>
-          <p>Weight:{dog.weight}</p>
-          <p>Age:{dog.age}</p>
+          <p>Description: {dog.description}</p>
+          <p>Weight: {dog.weight}</p>
+          <p>Age: {dog.age}</p>
           <img className="imgtmbl" src={dog.pictures[0]} />
         </>
       ) : (
@@ -39,6 +39,10 @@ function DogDetails() {
 
       <Link to="/dogs">
         <button>Back to list</button>
+      </Link>
+
+      <Link to={`/dogs/edit/${dogId}`}>
+        <button>Edit Dog</button>
       </Link>
     </div>
   );
