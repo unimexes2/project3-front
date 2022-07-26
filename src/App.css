@@ -81,7 +81,7 @@ flex-direction: column;
   height:50px;
 }
 
-
+#map { height: 180px; }
 
 
 .menulink{
@@ -90,6 +90,7 @@ flex-direction: column;
   font-weight: bold;
   font-size: 250%;
   margin:5px;
+  color: inherit; text-decoration: inherit 
 
 }
 .me-auto{
