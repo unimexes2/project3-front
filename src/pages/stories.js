@@ -1,28 +1,54 @@
-import CarouselBasement  from "../components/carousel";
 
-import protectlogo from "../pictures/protectora.png"
+import { useState, useEffect } from "react";
+import axios from "axios";
 function Stories() {
- 
- 
+  
+  var [stories, setStories] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/stories")
+      .then((response) => {
+
+      
+        setStories([...response.data]);
+      });
+  }, []);
  
     return (
       
       <div className="main-container">
    
-          <div className="container1">
-           
-            <img className="imagetext" src={protectlogo}/>
-              <h4 className="main-text">L'associació Amics dels Animals de Palafolls és una entitat sense ànim de lucre constituida al 
-                2007 amb el propòsit de donar atenció a aquells gossos i gats que han estat abandonats a Palafolls i proporcinar-los-hi una nova llar i siguin tractats de la manera que els corresponen: amb atenció i estima.
-Som voluntaries que realitzem aquesta tasca desinteressadament, 
-invertint el nostre temps personal intentant sol·lucionar els problemes dels abandonaments,
- maltractaments i accidents dels animals de la nostra població. </h4>
-                  
-  
-          </div>
-  
-  
-        <div>
+   <div className="w3-container w3-teal">
+<h1>{stories.header}</h1>
+</div>
+
+<div className="w3-content">
+
+<div className="w3-row w3-margin">
+
+
+<div className="w3-twothird w3-container">
+
+  <p>
+  {stories.description}
+  </p>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
        </div>
        
@@ -32,15 +58,6 @@ invertint el nostre temps personal intentant sol·lucionar els problemes dels ab
 
 
 
-<CarouselBasement/>
-
-
-
-       
-       
-  
-  
-      </div>
     );
   }
   

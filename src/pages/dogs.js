@@ -145,16 +145,16 @@ function DogsList(props) {
 {dogs.map((dog) => {
 
   return (    
-    <form onSubmit={deleteDog} id={dog._id}>
-<div className="w3-container w3-teal">
-<h1>{dog.name}</h1>
+<form onSubmit={deleteDog} id={dog._id}>
+<div className="w3-container w3-teal"style={{margin:"20px" }}>
+<h1 >{dog.name}</h1>
 </div>
 
-<div className="w3-content">
+<div className="w3-content" >
 
 <div className="w3-row w3-margin">
 
-<div className="w3-third">
+<div className="w3-third" >
 <Link to={"/dog/" + dog._id}> 
   <img src={dog.pictures[0]}style={{width:"100%", minheight:"200px"}}/>
   </Link>
