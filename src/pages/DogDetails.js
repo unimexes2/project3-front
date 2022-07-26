@@ -48,7 +48,7 @@ function DogDetails() {
           <p>Description: {dog.description}</p>
           <p>Weight: {dog.weight}</p>
           <p>Age: {dog.age}</p>
-
+          <p>Sex: {dog.sex}</p>
           
           <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
 
