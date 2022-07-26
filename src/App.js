@@ -1,11 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
-<<<<<<< Updated upstream
-import DogDetails from './pages/DogDetails';
-=======
-import { Link } from 'react-router-dom';
->>>>>>> Stashed changes
 import CatsList from './pages/cats';
 import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
