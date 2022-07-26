@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
-// import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './../context/auth.context';
 import { loginService } from '../services/auth.services';
 
@@ -39,8 +38,8 @@ function LoginPage(props) {
 		<div className="container">
     <div className="row">
       <div className="col-md-6 offset-md-3">
-        <h2 className="text-center text-dark mt-5">Login Form</h2>
-        <div className="text-center mb-5 text-dark">Made with bootstrap</div>
+        <h2 className="text-center text-dark mt-5">Administator login</h2>
+        
         <div className="card my-5">
 
           <form className="card-body cardbody-color p-lg-5" onSubmit={handleLoginSubmit}>
@@ -58,10 +57,7 @@ function LoginPage(props) {
               <input type="password" className="form-control" id="password" placeholder="password"type="password" value={password} onChange={handlePassword} />
             </div>
             <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>
-            <div id="emailHelp" className="form-text text-center mb-5 text-dark">Not
-              Registered? <a href="#" className="text-dark fw-bold"> Create an
-                Account</a>
-            </div>
+            
           </form>
         </div>
 

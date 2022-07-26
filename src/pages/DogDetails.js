@@ -23,11 +23,12 @@ function DogDetails() {
  
 
   return (
-    <div className="DogDetails">
+    <div className="dogDetails">
       {dog ? (
         <>
           <h1>Name: {dog.name}</h1>
-          <p>Breed: {dog.breed}</p>
+          <div><p>Breed:</p> </div>
+                    <h6>{dog.breed}</h6>
           <p>Description: {dog.description}</p>
           <p>Weight: {dog.weight}</p>
           <p>Age: {dog.age}</p>

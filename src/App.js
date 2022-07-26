@@ -1,5 +1,3 @@
-  
-          
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
@@ -32,65 +30,22 @@ function App() {
 
 					<Route exact path="/" element={<Main />} />
 					<Route exact path="/addmap" element={<AdMap />} />
-					<Route
-						exact
-						path="/cats"
-						element={
-
-							<CatsList />
-
-						}
-					/>
-
-
-					<Route
-
-
-						exact
-						path="/cat/:catId"
-						element={
-							<CatCard />
-						}
-					/>
-					<Route
-
-						exact
-						path="/dogs"
-						element={
-
-							<DogsList />} />
+					<Route	exact path="/cats" element={ <CatsList /> }	/>
+    				<Route	exact path="/cat/:catId" element={	<CatCard />	}/>
+					<Route	exact path="/dogs" element={<DogsList />} />
 					<Route exact path="/stories" element={<AdStories />} />
 
-					<Route
-						exact
-						path="/map"
-						element={
-
-							<Map />
-
-
-						}
-					/>
-               <Route exact path="/dog/:dogId" element={<DogDetails />} />
-		  <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
-					<Route
-						exact
-						path="/signup"
-						element={
-							<AnonRoute>
-								<SignupPage />
-							</AnonRoute>
-						}
-					/>
-					<Route
-						exact
-						path="/login"
-						element={
-							<AnonRoute>
-								<LoginPage />
-							</AnonRoute>
-						}
-					/>
+					<Route	exact path="/map" element={	<Map />	}/>
+                    <Route exact path="/dog/:dogId" element={<DogDetails />} />
+		            <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
+					<Route exact path="/signup"	element={ <AnonRoute>
+						<SignupPage />
+						</AnonRoute>
+						}/>
+					<Route exact path="/login"	element={ <AnonRoute>
+						<LoginPage />
+						</AnonRoute>
+						}/>
 				</Routes>
 			</div>
 		</div>
