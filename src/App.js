@@ -1,8 +1,12 @@
+  
+
+          
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
+import DogDetails from './pages/DogDetails';
 import CatsList from './pages/cats';
-import CatCard from './pages/catCard';
+// import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -11,12 +15,12 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Main from './pages/main';
 import Map from './pages/map';
-//import CatCard from './pages/catCard';
+import CatCard from './pages/catCard';
 import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
 import EditDogPage from './pages/EditDogPage'
-import { Link } from 'react-router-dom';
+
 function App() {
 	return (
 		<div>
@@ -68,6 +72,8 @@ function App() {
 
 						}
 					/>
+               <Route exact path="/dog/:dogId" element={<DogDetails />} />
+		  <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
 					<Route
 						exact
 						path="/signup"
@@ -90,6 +96,7 @@ function App() {
 			</div>
 		</div>
 	);
+
 }
 
 export default App;
