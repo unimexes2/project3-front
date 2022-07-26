@@ -16,11 +16,11 @@ function DogDetails() {
       .catch((error) => console.log(error));
   }
 
-  // useEffect(()=> {
-  //   DogDetails();
-  // }, [] );
+   useEffect(()=> {
+    getDog(dogId);
+   }, [] );
 
-  getDog(dogId);
+ 
 
   return (
     <div className="DogDetails">
