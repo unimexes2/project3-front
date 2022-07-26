@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
 import DogDetails from './pages/DogDetails';
 import CatsList from './pages/cats';
-// import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -12,11 +11,12 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Main from './pages/main';
 import Map from './pages/map';
-import CatCard from './pages/catCard';
+import CatDetails from './pages/CatDetails';
 import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
 import EditDogPage from './pages/EditDogPage'
+import EditCatPage from './pages/EditCatPage'
 
 function App() {
 	return (
@@ -30,14 +30,17 @@ function App() {
 
 					<Route exact path="/" element={<Main />} />
 					<Route exact path="/addmap" element={<AdMap />} />
-					<Route	exact path="/cats" element={ <CatsList /> }	/>
-    				<Route	exact path="/cat/:catId" element={	<CatCard />	}/>
-					<Route	exact path="/dogs" element={<DogsList />} />
 					<Route exact path="/stories" element={<AdStories />} />
-
 					<Route	exact path="/map" element={	<Map />	}/>
+
+					<Route	exact path="/cats" element={ <CatsList /> }	/>
+    				<Route	exact path="/cat/:catId" element={	<CatDetails />	}/>
+    				<Route	exact path="/cats/edit/:catId" element={<EditCatPage />	}/>
+
+					<Route	exact path="/dogs" element={<DogsList />} />
                     <Route exact path="/dog/:dogId" element={<DogDetails />} />
 		            <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
+					
 					<Route exact path="/signup"	element={ <AnonRoute>
 						<SignupPage />
 						</AnonRoute>
