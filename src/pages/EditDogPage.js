@@ -35,8 +35,7 @@ function EditDogPage() {
     axios
       .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
       .then((response) => {
-        // Once the request is resolved successfully and the project
-        // is updated we navigate back to the details page
+
         navigate(`/dogs/${dogId}`)
       });
   };
