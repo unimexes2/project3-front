@@ -1,3 +1,6 @@
+  
+
+          
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
@@ -67,6 +70,8 @@ function App() {
 
 						}
 					/>
+               <Route exact path="/dog/:dogId" element={<DogDetails />} />
+		  <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
 					<Route
 						exact
 						path="/signup"
@@ -89,6 +94,7 @@ function App() {
 			</div>
 		</div>
 	);
+
 }
 
 export default App;
