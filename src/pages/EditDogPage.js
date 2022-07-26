@@ -37,6 +37,7 @@ function EditDogPage() {
       .then((response) => {
 
         navigate(`/dogs/${dogId}`)
+        navigate(`/dog/${dogId}`)
       });
   };
 

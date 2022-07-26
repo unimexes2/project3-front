@@ -27,11 +27,11 @@ function DogDetails() {
       {dog ? (
         <>
           <h1>Name: {dog.name}</h1>
+          <img className="imgtmbl" src={dog.pictures[0]} />
           <p>Breed: {dog.breed}</p>
           <p>Description: {dog.description}</p>
           <p>Weight: {dog.weight}</p>
           <p>Age: {dog.age}</p>
-          <img className="imgtmbl" src={dog.pictures[0]} />
         </>
       ) : (
         <></>
