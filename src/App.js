@@ -15,7 +15,7 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Main from './pages/main';
 import Map from './pages/map';
-import CatCard from './pages/catCard';
+
 import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
