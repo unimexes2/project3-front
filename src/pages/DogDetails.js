@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function DogDetails() {
+  const navigate = useNavigate();
   const [dog, setDog] = useState(null);
   const { dogId } = useParams();
 
@@ -15,6 +16,19 @@ function DogDetails() {
       })
       .catch((error) => console.log(error));
   }
+  function handleAdopt(){
+    let isAdopted= true;
+    const requestBody = { isAdopted };
+    axios
+    .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
+    .then((response) => {
+
+      navigate(`/dogs`)
+    });
+};
+   
+
+  
 
    useEffect(()=> {
     getDog(dogId);
@@ -34,6 +48,11 @@ function DogDetails() {
           <p>Description: {dog.description}</p>
           <p>Weight: {dog.weight}</p>
           <p>Age: {dog.age}</p>
+
+          
+          <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
+
+
         </>
       ) : (
         <></>

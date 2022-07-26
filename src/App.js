@@ -16,7 +16,11 @@ import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
 import EditDogPage from './pages/EditDogPage'
+
+import DogsAdopted from './pages/adoptedDog';
+
 import EditCatPage from './pages/EditCatPage'
+
 
 function App() {
 	return (
@@ -43,7 +47,9 @@ function App() {
 					
                     <Route exact path="/dog/:dogId" element={<DogDetails />} />
 		            <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
-					
+
+					<Route	exact path="/dogadopted" element={<DogsAdopted />}/>
+
 					<Route exact path="/signup"	element={ <AnonRoute>
 						<SignupPage />
 						</AnonRoute>
