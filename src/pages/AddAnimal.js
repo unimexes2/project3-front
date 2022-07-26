@@ -144,7 +144,7 @@ const AddAnimal = () => {
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
             <select value={type} onChange={handleSelect}>
-              <option value="dog">Dog</option>
+              <option value="dog" selected>Dog</option>
               <option value="cat">Cat</option>
             </select>
           </div>
