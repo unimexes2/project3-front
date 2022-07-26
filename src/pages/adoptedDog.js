@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
-function DogsList(props) {
+function DogsAdopted(props) {
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -143,7 +143,7 @@ function DogsList(props) {
 <div className="list-group" style={{ height: '600px', display: 'flex', flexDirection: 'row', flexWrap: "wrap" }}>
 
 {dogs.map((dog) => {
-  if (dog.isAdopted){return}
+  if (!dog.isAdopted){return}
 
   return (    
 <form onSubmit={deleteDog} id={dog._id}>
@@ -210,4 +210,4 @@ function DogsList(props) {
   )
 }
 
-export default DogsList;
+export default DogsAdopted;

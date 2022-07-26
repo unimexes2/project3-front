@@ -9,7 +9,7 @@ const AddAnimal = () => {
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
   const [profilePicture, setProfilePicture] = useState("");
-  const [sex, setSex] = useState("");
+  const [sex, setSex] = useState("hembra");
   const [description, setDescription] = useState("");
   const [admitionDate, setAdmitionDate] = useState("");
   const [views, setViews] = useState(0);
@@ -24,7 +24,7 @@ const AddAnimal = () => {
 
   const handleSelectSex = e => {
     console.log("selected", e.target.value);
-    setType(e.target.value);
+    setSex(e.target.value);
     
   };
 
@@ -125,7 +125,7 @@ console.log(body)
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
             <select value={type} onChange={handleSelect}>
-              <option value="dog" defaultValue>Dog</option>
+              <option value="dog" >Dog</option>
               <option value="cat">Cat</option>
             </select>
           </div>
@@ -134,7 +134,7 @@ console.log(body)
           <div className="selectSex">
             <label>Select Sex</label>
             <select value={sex} onChange={handleSelectSex}>
-              <option value="hembra" defaultValue>Female</option>
+              <option value="hembra">Female</option>
               <option value="macho">Male</option>
             </select>
           </div>

@@ -50,7 +50,7 @@ console.log(isLoggedIn)
 
             <Nav.Link href="/dogs" className="menulink">PERROS</Nav.Link>
             <Nav.Link href="/stories" className="menulink">HISTORIAS</Nav.Link>
-            <Nav.Link href="/stories" className="menulink">YA TIENEN FAMILIA</Nav.Link>
+            <Nav.Link href="/dogadopted" className="menulink">PERROS ADOPTADOS</Nav.Link>
             <Nav.Link href="/donate" className="menulink">DONACIONES</Nav.Link>
             <Nav.Link href="/map" className="menulink"> UBICACION </Nav.Link>
             <Nav.Link href="/login" className="menulink"> CONTACTOS </Nav.Link>
