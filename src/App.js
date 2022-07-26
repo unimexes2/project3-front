@@ -1,9 +1,13 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
+<<<<<<< Updated upstream
 import DogDetails from './pages/DogDetails';
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> Stashed changes
 import CatsList from './pages/cats';
-// import CatCard from './pages/catCard';
+import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -12,7 +16,7 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Main from './pages/main';
 import Map from './pages/map';
-import CatCard from './pages/catCard';
+//import CatCard from './pages/catCard';
 import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
