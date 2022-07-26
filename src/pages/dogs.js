@@ -3,7 +3,7 @@ import axios from "axios";
 import { useContext } from "react";   
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
-
+import { Link } from "react-router-dom";
 function DogsList(props) {
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])

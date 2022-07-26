@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
-
+import DogDetails from './pages/DogDetails';
 import CatsList from './pages/cats';
 // import CatCard from './pages/catCard';
 import DogsList from './pages/dogs';
@@ -16,6 +16,8 @@ import CatCard from './pages/catCard';
 import Stories from './pages/stories';
 import AdMap from './pages/addmap';
 import AdStories from './pages/addstory';
+import EditDogPage from './pages/EditDogPage'
+import { Link } from 'react-router-dom';
 function App() {
 	return (
 		<div>
