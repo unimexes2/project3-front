@@ -44,8 +44,8 @@ function CatDetails() {
                     <h6>{cat.breed}</h6>
 
           <p>Description: {cat.description}</p>
-          <p>Weight: {cat.weight}</p>
-          <p>Age: {cat.age}</p>
+          <p>Weight: {cat.weight} Kg.</p>
+          <p>Age: {cat.age} years</p>
           <p>Sex: {cat.sex}</p>
 
           <img className="imgtmbl" src={cat.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
