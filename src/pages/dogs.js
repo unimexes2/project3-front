@@ -109,65 +109,96 @@ function DogsList(props) {
 
   };
   return (
-    <div style={{ display: 'flex', }}>
-      <div style={{ backgroundColor:"white", border:"5px solid red" }}>
-
-        <label>Buscar por raza</label>
-        <input name="Search" onChange={(e) => doSearchByBreed(e.target.value)}>
-        </input>
-
-         <label>Buscar por tamaño</label>
-          <select id="size" list="size" name="Size" onChange={(e) => doSearchBySize(e.target.value)}>  
-            <option value="all">All</option>
-            <option value="pequeño">Pequeño</option>
-            <option value="mediano">Mediano</option>
-            <option value="grande">Grande</option>
-          </select>
+   
+   
+   <div style={{ display: 'flex' ,flexDirection:"column"}}>
 
 
-       <label>Buscar por edad</label>
-        <select id="age" list="age" name="Age" onChange={(e) => doSearchByAge(e.target.value)}>  
-          <option value="all">All</option>
-          <option value="cachorro">Cachorro</option>
-          <option value="joven">Joven</option>
-          <option value="adulto">Adulto</option>
-        </select>
-  
+<div  className="w3-container w3-teal"  style={{ display: "flex",flexDirection:"row",    borderBottom: "10px solid rgb(212, 212, 212)"}}>
 
+<label>Buscar por raza</label>
+<input name="Search" onChange={(e) => doSearchByBreed(e.target.value)}>
+</input>
+
+ <label>Buscar por tamaño</label>
+  <select id="size" list="size" name="Size" onChange={(e) => doSearchBySize(e.target.value)}>  
+    <option value="all">All</option>
+    <option value="pequeño">Pequeño</option>
+    <option value="mediano">Mediano</option>
+    <option value="grande">Grande</option>
+  </select>
+
+
+<label>Buscar por edad</label>
+<select id="age" list="age" name="Age" onChange={(e) => doSearchByAge(e.target.value)}>  
+  <option value="all">All</option>
+  <option value="cachorro">Cachorro</option>
+  <option value="joven">Joven</option>
+  <option value="adulto">Adulto</option>
+</select>
+
+</div>
+
+
+<div className="list-group" style={{ height: '600px', display: 'flex', flexDirection: 'row', flexWrap: "wrap" }}>
+
+{dogs.map((dog) => {
+
+  return (    
+    <form onSubmit={deleteDog} id={dog._id}>
+<div className="w3-container w3-teal">
+<h1>{dog.name}</h1>
+</div>
+
+<div className="w3-content">
+
+<div className="w3-row w3-margin">
+
+<div className="w3-third">
+<Link to={"/dog/" + dog._id}> 
+  <img src={dog.pictures[0]}style={{width:"100%", minheight:"200px"}}/>
+  </Link>
+</div>
+<div className="w3-twothird w3-container">
+  <h6>Breed: {dog.breed}</h6>
+  <h6>Weight: {dog.weight} Kg.</h6>
+  <h6>Age: {dog.age} years</h6>
+  <p>
+  {dog.description}
+  </p>
+</div>
+
+</div>
+</div>
+
+
+    <div>
+ 
+
+      
+    
+      
+
+      <h6></h6>
+   
+      
+
+      {isLoggedIn
+?(<button type="submit">Delete Dog</button>):<></>}
       </div>
+      </form>
+  );
 
-
-
-      <div className="list-group" style={{ height: '600px', display: 'flex', flexDirection: 'row', flexWrap: "wrap" }}>
-
-        {dogs.map((dog) => {
-
-          return (
-            <form onSubmit={deleteDog} id={dog._id}>
-            <div>
-            <img className="imgtmbl" src={dog.pictures[0]} />
-
-              <Link to={"/dog/" + dog._id}>  
-              <h4>{dog.name}</h4>
-              </Link>
-
-              <h6>Breed: {dog.breed}</h6>
-              <h6>Description: {dog.description}</h6>
-              <h6>Weight: {dog.weight} Kg.</h6>
-              <h6>Age: {dog.age} years</h6>
-
-              {isLoggedIn
-        ?(<button type="submit">Delete Dog</button>):<></>}
-              </div>
-              </form>
-          );
-
-        })}
+})}
 
 
 
 
-      </div>
+</div>
+
+
+
+
 
 
 
