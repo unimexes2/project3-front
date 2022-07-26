@@ -9,7 +9,7 @@ const AddAnimal = () => {
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
   const [profilePicture, setProfilePicture] = useState("");
-
+  const [sex, setSex] = useState("");
   const [description, setDescription] = useState("");
   const [admitionDate, setAdmitionDate] = useState("");
   const [views, setViews] = useState(0);
@@ -22,15 +22,25 @@ const AddAnimal = () => {
     console.log("selected", e.target.value);
   };
 
+  const handleSelectSex = e => {
+    console.log("selected", e.target.value);
+    setType(e.target.value);
+    
+  };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("type is", type);
+
     let addStr = ""
     if (type === "dog") { addStr = "adddog" } else { addStr = "addcat" }
+    
     const body = {
       name: name,
       breed: breed,
+      sex:sex,
       age: age,
       weight: weight,
       profilePicture: profilePicture,
@@ -42,7 +52,7 @@ const AddAnimal = () => {
     };
 
 
-
+console.log(body)
 
 
 
@@ -58,6 +68,7 @@ const AddAnimal = () => {
       setAdmitionDate("");
       setViews("");
       setFoto([]);
+      setSex([])
     });
   };
 
@@ -107,47 +118,27 @@ const AddAnimal = () => {
 
   return (
     <div className="inputreturn">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <form className="addanimal" onSubmit={handleSubmit}>
+       
         <div className="addForm">
+         
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
             <select value={type} onChange={handleSelect}>
-              <option value="dog" selected>Dog</option>
+              <option value="dog" defaultValue>Dog</option>
               <option value="cat">Cat</option>
             </select>
           </div>
+
+
+          <div className="selectSex">
+            <label>Select Sex</label>
+            <select value={sex} onChange={handleSelectSex}>
+              <option value="hembra" defaultValue>Female</option>
+              <option value="macho">Male</option>
+            </select>
+          </div>
+
           <div className="displayColumn">
             <label className="labelLeftBold">Name: </label>
             <input
@@ -188,6 +179,7 @@ const AddAnimal = () => {
               value={weight}
             />
           </div>
+          
        
 
           <div className="displayColumn">

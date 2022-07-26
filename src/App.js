@@ -30,6 +30,7 @@ function App() {
 
 					<Route exact path="/" element={<Main />} />
 					<Route exact path="/addmap" element={<AdMap />} />
+
 					<Route exact path="/stories" element={<AdStories />} />
 					<Route	exact path="/map" element={	<Map />	}/>
 
@@ -38,6 +39,8 @@ function App() {
     				<Route	exact path="/cats/edit/:catId" element={<EditCatPage />	}/>
 
 					<Route	exact path="/dogs" element={<DogsList />} />
+
+					
                     <Route exact path="/dog/:dogId" element={<DogDetails />} />
 		            <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />
 					

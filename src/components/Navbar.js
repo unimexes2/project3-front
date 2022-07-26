@@ -36,7 +36,7 @@ console.log(isLoggedIn)
               ADD MAP
             </Nav.Link>
             
-            <Nav.Link href="/stories" className="menulinkadmin">
+            <Nav.Link href="/addstories" className="menulinkadmin">
               ADD STORY
             </Nav.Link>
 
