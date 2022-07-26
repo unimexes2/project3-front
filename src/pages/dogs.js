@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";   
+import { useContext } from "react";   
 import { useParams, useNavigate } from "react-router-dom";
-
+import { AuthContext } from "./../context/auth.context";
 
 function DogsList(props) {
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])
-
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const { id } = useParams();
 
   useEffect(() => {
@@ -156,7 +156,8 @@ function DogsList(props) {
               <h6>Weight: {dog.weight} Kg.</h6>
               <h6>Age: {dog.age} years</h6>
 
-              <button type="submit">Delete Dog</button>
+              {isLoggedIn
+        ?(<button type="submit">Delete Dog</button>):<></>}
               </div>
               </form>
           );

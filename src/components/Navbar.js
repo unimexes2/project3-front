@@ -35,7 +35,10 @@ console.log(isLoggedIn)
             <Nav.Link href="/addmap" className="menulinkadmin">
               ADD MAP
             </Nav.Link>
-
+            
+            <Nav.Link href="/stories" className="menulinkadmin">
+              ADD STORY
+            </Nav.Link>
 
           </>)
         : 
