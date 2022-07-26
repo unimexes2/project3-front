@@ -38,7 +38,7 @@ const AddAnimal = () => {
       description: description,
       admitionDate: admitionDate,
       views: views,
-
+      isAdopted:false,
     };
 
 
@@ -107,6 +107,37 @@ const AddAnimal = () => {
 
   return (
     <div className="inputreturn">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <form className="addanimal" onSubmit={handleSubmit}>
         <div className="addForm">
