@@ -20,6 +20,7 @@ import EditDogPage from './pages/EditDogPage'
 import DogsAdopted from './pages/adoptedDog';
 
 import EditCatPage from './pages/EditCatPage'
+import AddContact from './pages/Addcontact';
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
     				<Route	exact path="/cats/edit/:catId" element={<EditCatPage />	}/>
 
 					<Route	exact path="/dogs" element={<DogsList />} />
-
+					<Route	exact path="/addcontact" element={ <AddContact /> }	/>
 					
                     <Route exact path="/dog/:dogId" element={<DogDetails />} />
 		            <Route path="/dogs/edit/:dogId" element={ <EditDogPage /> } />

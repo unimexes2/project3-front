@@ -74,6 +74,9 @@ console.log(isLoggedIn)
               ADD MAP
             </Nav.Link>
             
+            <Nav.Link href="/addcontact" className="w3-bar-item w3-button">
+              ADD CONTACT
+            </Nav.Link>
             <Nav.Link href="/addstories" className="w3-bar-item w3-button">
               ADD STORY
             </Nav.Link>
