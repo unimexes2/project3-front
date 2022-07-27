@@ -70,7 +70,7 @@ const AdDonation = () => {
                     value={paypal}
                 />
             </div><div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">bizum</label>
+                <label className="labelLeftBold">TEAMING NET</label>
                 <input
                     className="form-control"
                     type="text"             
@@ -84,8 +84,7 @@ const AdDonation = () => {
       
  
  
-
-            <button type="submit" className="btn-success">
+            <button type="submit" className="btn btn-primary" style={{margin :"auto" ,color:"white",  marginBottom:"10px"}}>
                 Save to server
             </button>
 

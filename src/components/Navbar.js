@@ -83,8 +83,11 @@ console.log(isLoggedIn)
             <Nav.Link href="/addstories" className="w3-bar-item w3-button">
               ADD STORY
             </Nav.Link>
+          
+            <Nav.Link href="/settings" className="w3-bar-item w3-button">
+              SITE SETTINGS
+            </Nav.Link>
             </Navbar>
-
 
           </>)
         : 

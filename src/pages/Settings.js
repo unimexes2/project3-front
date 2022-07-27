@@ -5,9 +5,12 @@ import { useState, useEffect } from "react";
 import React from "react";
 
 import axios from "axios";
-const AdStories = () => {
+const AdSettings = () => {
     const [foto, setFoto] = useState([])
     const fotoArr = [];
+    const [fotoCarusel, setFotoCarusel] = useState([])
+    const fotoArrCar = [];
+
 
     const [header, setHeader] = useState("");
     const [description, setDescription] = useState("");
@@ -25,21 +28,7 @@ const AdStories = () => {
         })
     
         setFoto([...deletedArr])
-    
-    
-    
-    
-    
-    
       })
-
-
-
-
-
-
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -162,4 +151,4 @@ const AdStories = () => {
 
 
 }
-export default AdStories;
+export default AdSettings;
