@@ -34,30 +34,37 @@ function DogDetails() {
   return (
     <div className="dogDetails">
       {dog ? (
-        <>
-          <h1>Nombre: {dog.name}</h1>
+        <div className="dogDetails">
           <div>
-            <p>Raza:</p>{" "}
-          </div>
-          <h6>{dog.breed}</h6>
-          <p>Descripcion: {dog.description}</p>
-          <p>Peso: {dog.weight} Kg.</p>
-          <p>Edad: {dog.age} years</p>
-          <p>Sexo: {dog.sex}</p>
           <img className="imgtmbl" src={dog.pictures[0]} />{" "}
           <button onClick={handleAdopt}>ADOPTADO!!!</button>
-        </>
-      ) : (
-        <></>
-      )}
-
-      <Link to="/dogs">
+          <Link to="/dogs">
         <button>Volver al listado</button>
       </Link>
 
       <Link to={`/dogs/edit/${dogId}`}>
         <button>Editar Perro</button>
       </Link>
+      </div>
+          <div style={{width:600, height:400}}> 
+          <h1>Nombre: {dog.name}</h1>
+        
+            <h6>Raza:{dog.breed}</h6>
+         
+          <h6></h6>
+          <h6>Descripcion: {dog.description}</h6>
+          <h6>Peso: {dog.weight} Kg.</h6>
+          <h6>Edad: {dog.age} years</h6>
+          <h6>Sexo: {dog.sex}</h6>
+          </div>
+         
+
+        </div>
+      ) : (
+        <></>
+      )}
+
+      
     </div>
   );
 }

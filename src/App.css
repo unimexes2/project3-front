@@ -218,11 +218,14 @@ width:200px ;
 a{
   text-decoration: none;
 }
+
 .dogDetails{
   margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
+  background-color: #61dafb;
 }
 
 
