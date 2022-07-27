@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams,useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function DogDetails() {
@@ -17,40 +17,35 @@ function DogDetails() {
       .catch((error) => console.log(error));
   }
 
-  function handleAdopt(){
-    let isAdopted= true;
+  function handleAdopt() {
+    let isAdopted = true;
     const requestBody = { isAdopted };
     axios
-    .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
-    .then((response) => {
+      .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
+      .then((response) => {
+        navigate(`/dogs`);
+      });
+  }
 
-      navigate(`/dogs`)
-    });
-};
-
-   useEffect(()=> {
+  useEffect(() => {
     getDog(dogId);
-   }, [] );
-
- 
+  }, []);
 
   return (
     <div className="dogDetails">
       {dog ? (
         <>
           <h1>Nombre: {dog.name}</h1>
-
-          <div><p>Raza:</p> </div>
-                    <h6>{dog.breed}</h6>
-
+          <div>
+            <p>Raza:</p>{" "}
+          </div>
+          <h6>{dog.breed}</h6>
           <p>Descripcion: {dog.description}</p>
           <p>Peso: {dog.weight} Kg.</p>
           <p>Edad: {dog.age} years</p>
           <p>Sexo: {dog.sex}</p>
-          
-          <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>ADOPTADO!!!</button>
-
-
+          <img className="imgtmbl" src={dog.pictures[0]} />{" "}
+          <button onClick={handleAdopt}>ADOPTADO!!!</button>
         </>
       ) : (
         <></>
