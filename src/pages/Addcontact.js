@@ -86,7 +86,9 @@ console.log(body)
 
 
           <div className="displayColumn">
+
             <label className="labelLeftBold">Nombre: </label>
+
             <input
               className="form-control"
               type="text"
@@ -96,7 +98,9 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
+
             <label className="labelLeftBold">Apellido: </label>
+
             <input
               className="form-control"
               type="text"
@@ -106,7 +110,9 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
+
             <label className="labelLeftBold">Telefono: </label>
+
             <input
               className="form-controlTA"
               type="text"
@@ -116,7 +122,9 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
+
             <label className="labelLeftBold">Email </label>
+
             <input
               className="form-controlTA"
               type="text"

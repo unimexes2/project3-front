@@ -20,6 +20,7 @@ import DogDetails from './pages/DogDetails';
 import EditDogPage from './pages/EditDogPage'
 import DogsAdopted from './pages/adoptedDog';
 
+import AdDonation from './pages/AddDonation';
 
 import AddContact from './pages/Addcontact';
 import ContactList from './pages/ContactList';
@@ -41,7 +42,7 @@ function App() {
 					<Route exact path="/stories" element={<Stories />} />
 					<Route exact path="/addstories" element={<AdStories />} />
 					<Route	exact path="/map" element={	<Map />	}/>
-
+					<Route	exact path="/addonation" element={	<AdDonation />	}/>
 					<Route	exact path="/cats" element={ <CatsList /> }	/>
     				<Route	exact path="/cat/:catId" element={<PrivateRoute> <CatDetails /> </PrivateRoute>}/>
     				<Route	exact path="/cats/edit/:catId" element={<PrivateRoute> <EditCatPage /> </PrivateRoute>}/>
