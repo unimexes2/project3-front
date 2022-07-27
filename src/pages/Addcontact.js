@@ -83,7 +83,7 @@ console.log(body)
 
 
           <div className="displayColumn">
-            <label className="labelLeftBold">Name: </label>
+            <label className="labelLeftBold">firstName: </label>
             <input
               className="form-control"
               type="text"
@@ -93,7 +93,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Breed: </label>
+            <label className="labelLeftBold">lastName: </label>
             <input
               className="form-control"
               type="text"
@@ -103,7 +103,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Age: </label>
+            <label className="labelLeftBold">phone: </label>
             <input
               className="form-controlTA"
               type="text"
@@ -113,7 +113,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Weight </label>
+            <label className="labelLeftBold">email </label>
             <input
               className="form-controlTA"
               type="text"
