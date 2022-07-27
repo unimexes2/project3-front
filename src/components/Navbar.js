@@ -77,6 +77,9 @@ console.log(isLoggedIn)
             <Nav.Link href="/addcontact" className="w3-bar-item w3-button">
               ADD CONTACT
             </Nav.Link>
+            <Nav.Link href="/addonation" className="w3-bar-item w3-button">
+              ADD DONATION
+            </Nav.Link>
             <Nav.Link href="/addstories" className="w3-bar-item w3-button">
               ADD STORY
             </Nav.Link>

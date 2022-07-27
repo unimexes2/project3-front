@@ -117,11 +117,10 @@ console.log(body)
   })
 
   return (
+    <>
     <div className="inputreturn">
       <form className="addanimal" onSubmit={handleSubmit}>
-       
-        <div className="addForm">
-         
+               
           <div className="selectAnimal">
             <label>Select add new Cat or Dog:</label>
             <select value={type} onChange={handleSelect}>
@@ -162,7 +161,7 @@ console.log(body)
           <div className="displayColumn">
             <label className="labelLeftBold">Age: </label>
             <input
-              className="form-controlTA"
+              className="form-control"
               type="number"
               name="age"
               onChange={(e) => setAge(e.target.value)}
@@ -172,15 +171,15 @@ console.log(body)
           <div className="displayColumn">
             <label className="labelLeftBold">Weight </label>
             <input
-              className="form-controlTA"
+              className="form-control"
               type="number"
               name="weight"
               onChange={(e) => setWeight(e.target.value)}
               value={weight}
             />
           </div>
-          
-       
+        
+      
 
           <div className="displayColumn">
             <label className="labelLeftBold">Description: </label>
@@ -202,20 +201,12 @@ console.log(body)
               value={admitionDate}
             />
           </div>
+         
           <div className="displayColumn">
-            <label className="labelLeftBold">Views: </label>
-            <input
-              className="form-control"
-              type="number"
-              name="views"
-              onChange={(e) => setViews(e.target.value)}
-              value={views}
-            />
-          </div>
-          <div className="displayColumn">
-            <label className="labelLeftBold">Pictures: </label>
+            <label className="labeCenterBold">Pictures: </label>
 
             <input
+            
               className="form-upload"
               type="file"
               name="pictures"
@@ -247,15 +238,17 @@ console.log(body)
 
           })}
 
-        </div>
-        <button type="submit" className="btn-success">
+
+      <button type="submit" className="btn btn-primary" style={{margin :"auto" ,color:"white",  marginBottom:"10px"}}>
           Save to server
         </button>
+
+      
       </form>
 
 
     </div>
-
+    </>
   );
 };
 

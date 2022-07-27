@@ -88,7 +88,7 @@ const AdStories = () => {
     
 
 
-    return (<div className="displaystory">
+    return (<div className="inputreturn">
         <form className="displaystory" onSubmit={handleSubmit}>
           
             <div className="displaystory" style={{ "maxWidth": "600px" }}>

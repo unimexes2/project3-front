@@ -78,7 +78,9 @@ flex-direction: column;
 
 }
 .form-upload{
-  height:50px;
+  height:50px;width: 200px;
+  border: none;
+
 }
 
 
@@ -150,11 +152,11 @@ width:200px ;
   .img-wrap {
     position: relative;
     display: inline-block;
-    border: 1px red solid;
+    border: 1px blue solid;
     font-size: 0;
     margin :15px;
     padding:10px;
-    background-color: #984706;
+    background-color: #c2b9f1;
 }
 .img-wrap .close {
     position: absolute;
@@ -185,10 +187,7 @@ width:200px ;
   text-decoration-color: green;
   
 }
-.inputreturn{
 
-  font-family: cursive;
-}
 .form-control2{
   width:400px;
   height: 100px;
@@ -226,9 +225,43 @@ a{
   align-items: center;
 }
 
+
+
 .catDetails{
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.addanimal {
+  display: grid; /* to use css-grid */
+  grid-template-columns: 1fr 1fr 1fr; /* creates 2 columns */
+  gap: 20px; /* creates a gap between the columns and rows */
+  
+}
+
+.inputreturn{
+   display: flex;
+
+  flex-wrap: wrap;
+  font-family: cursive;
+width: 700px;
+  border-radius: 10px;
+  
+  
+  border: 4px solid #c2b9f1}
+
+form h3,
+form h4,
+form p,
+form button {
+  grid-column: span 2; /* lets those elements span both columns */
+}
+
+.displayColumn {
+  display: flex;
+  flex-direction: column;
+  /* flexbox is sued to palce the label and input below each other and allows the input to fill out the entrie width */
+}
+
