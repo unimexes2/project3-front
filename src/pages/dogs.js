@@ -74,6 +74,19 @@ function DogsList(props) {
     });
 
     setDogs(searchResult);
+  }
+
+  const doSearchBySex = (element) => {
+    dogs = [...search];
+    console.log("search", search);
+   if( element!=="todos"){
+    let searchResult = dogs.filter((dog) => {
+  if(dog.sex==element){return element}     
+      })
+   
+
+    setDogs(searchResult);}
+   else{ setDogs(dogs)}
   };
 
   const deleteDog = (id) => {
@@ -116,7 +129,7 @@ function DogsList(props) {
           name="Size"
           onChange={(e) => doSearchBySize(e.target.value)}
         >
-          <option value="all">All</option>
+          <option value="all">Todos</option>
           <option value="pequeño">Pequeño</option>
           <option value="mediano">Mediano</option>
           <option value="grande">Grande</option>
@@ -129,10 +142,22 @@ function DogsList(props) {
           name="Age"
           onChange={(e) => doSearchByAge(e.target.value)}
         >
-          <option value="all">All</option>
+          <option value="all">Todos</option>
           <option value="cachorro">Cachorro</option>
           <option value="joven">Joven</option>
           <option value="adulto">Adulto</option>
+        </select>
+
+        <label>Buscar por sexo</label>
+        <select
+          id="sex"
+          list="sex"
+          name="Sex"
+          onChange={(e) => doSearchBySex(e.target.value)}
+        >
+          <option value="todos">Todos</option>
+          <option value="hembra">Hembra</option>
+          <option value="macho">Macho</option>
         </select>
       </div>
 
@@ -167,10 +192,10 @@ function DogsList(props) {
                     </Link>
                   </div>
                   <div className="w3-twothird w3-container">
-                    <h6>Breed: {dog.breed}</h6>
-                    <h6>Weight: {dog.weight} Kg.</h6>
-                    <h6>Age: {dog.age} years</h6>
-                    <h6>Sex: {dog.sex}</h6>
+                    <h6>Raza: {dog.breed}</h6>
+                    <h6>Peso: {dog.weight} Kg.</h6>
+                    <h6>Edad: {dog.age} years</h6>
+                    <h6>Sexo: {dog.sex}</h6>
                     <p>{dog.description}</p>
                   </div>
                 </div>
@@ -179,7 +204,7 @@ function DogsList(props) {
               <div>
                 <h6></h6>
 
-                {isLoggedIn ? <button type="submit">Delete Dog</button> : <></>}
+                {isLoggedIn ? <button type="submit">Borrar Perro</button> : <></>}
               </div>
             </form>
           );

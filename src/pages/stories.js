@@ -93,7 +93,7 @@ return (
       
 
       {isLoggedIn
-?(<button type="submit">Delete hisrory</button>
+?(<button type="submit">Borrar Historia</button>
 
 ):<></>}
       </div>

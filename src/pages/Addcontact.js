@@ -86,7 +86,7 @@ console.log(body)
 
 
           <div className="displayColumn">
-            <label className="labelLeftBold">First Name: </label>
+            <label className="labelLeftBold">Nombre: </label>
             <input
               className="form-control"
               type="text"
@@ -96,7 +96,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Last Name: </label>
+            <label className="labelLeftBold">Apellido: </label>
             <input
               className="form-control"
               type="text"
@@ -106,7 +106,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Phone: </label>
+            <label className="labelLeftBold">Telefono: </label>
             <input
               className="form-controlTA"
               type="text"
@@ -116,7 +116,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">email </label>
+            <label className="labelLeftBold">Email </label>
             <input
               className="form-controlTA"
               type="text"
@@ -129,7 +129,7 @@ console.log(body)
  
        
           <div className="displayColumn">
-            <label className="labelLeftBold">Pictures: </label>
+            <label className="labelLeftBold">Foto: </label>
 
             <input
               className="form-upload"
@@ -143,7 +143,7 @@ console.log(body)
 
 
 
-          <label>Your pictures</label>
+          <label>Foto cargada...</label>
 
 
 
@@ -165,7 +165,7 @@ console.log(body)
 
         </div>
         <button type="submit" className="btn-success">
-          Save to server
+          Guardar en server
         </button>
       </form>
 

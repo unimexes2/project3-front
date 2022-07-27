@@ -42,10 +42,10 @@ function EditDogPage() {
 
   return (
     <div className="EditDogPage">
-      <h3>Edit {name}</h3>
+      <h3>Editar {name}</h3>
 
       <form onSubmit={handleFormSubmit}>
-        <label>Name:</label>
+        <label>Nombre:</label>
         <input
           type="text"
           name="name"
@@ -53,7 +53,7 @@ function EditDogPage() {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <label>Breed:</label>
+        <label>Raza:</label>
         <input
           type="text"
           name="breed"
@@ -61,7 +61,7 @@ function EditDogPage() {
           onChange={(e) => setBreed(e.target.value)}
         />
 
-        <label>Age:</label>
+        <label>Edad:</label>
         <input
           type="number"
           name="age"
@@ -69,15 +69,15 @@ function EditDogPage() {
           onChange={(e) => setAge(e.target.value)}
         />
 
-        <label>Sex:</label>
+        <label>Sexo:</label>
         <select value={sex} onChange={(e) => setSex(e.target.value)}>
           <option value="hembra" defaultValue>
-            Female
+            Hembra
           </option>
-          <option value="macho">Male</option>
+          <option value="macho">Macho</option>
         </select>
 
-        <label>Weight:</label>
+        <label>Peso:</label>
         <input
           type="number"
           name="weight"
@@ -85,7 +85,7 @@ function EditDogPage() {
           onChange={(e) => setWeight(e.target.value)}
         />
 
-        <label>Description:</label>
+        <label>Descripcion:</label>
         <textarea
           name="description"
           value={description}

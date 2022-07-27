@@ -38,17 +38,17 @@ function DogDetails() {
     <div className="dogDetails">
       {dog ? (
         <>
-          <h1>Name: {dog.name}</h1>
+          <h1>Nombre: {dog.name}</h1>
 
-          <div><p>Breed:</p> </div>
+          <div><p>Raza:</p> </div>
                     <h6>{dog.breed}</h6>
 
-          <p>Description: {dog.description}</p>
-          <p>Weight: {dog.weight} Kg.</p>
-          <p>Age: {dog.age} years</p>
-          <p>Sex: {dog.sex}</p>
+          <p>Descripcion: {dog.description}</p>
+          <p>Peso: {dog.weight} Kg.</p>
+          <p>Edad: {dog.age} years</p>
+          <p>Sexo: {dog.sex}</p>
           
-          <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
+          <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>ADOPTADO!!!</button>
 
 
         </>
@@ -57,11 +57,11 @@ function DogDetails() {
       )}
 
       <Link to="/dogs">
-        <button>Back to list</button>
+        <button>Volver al listado</button>
       </Link>
 
       <Link to={`/dogs/edit/${dogId}`}>
-        <button>Edit Dog</button>
+        <button>Editar Perro</button>
       </Link>
     </div>
   );

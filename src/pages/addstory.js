@@ -92,7 +92,7 @@ const AdStories = () => {
         <form className="displaystory" onSubmit={handleSubmit}>
           
             <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">Header</label>
+                <label className="labelLeftBold">Titulo: </label>
                 <textarea
                     className="form-control2"
                     type="text"             
@@ -103,7 +103,7 @@ const AdStories = () => {
             </div>
 
             <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">Description</label>
+                <label className="labelLeftBold">Descripcion: </label>
                 <textarea
                     rows="4"
                     cols="50"

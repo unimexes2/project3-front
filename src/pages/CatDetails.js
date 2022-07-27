@@ -38,17 +38,17 @@ function CatDetails() {
     <div className="catDetails">
       {cat ? (
         <>
-          <h1>Name: {cat.name}</h1>
+          <h1>Nombre: {cat.name}</h1>
 
-          <div><p>Breed:</p> </div>
+          <div><p>Raza:</p> </div>
                     <h6>{cat.breed}</h6>
 
-          <p>Description: {cat.description}</p>
-          <p>Weight: {cat.weight} Kg.</p>
-          <p>Age: {cat.age} years</p>
-          <p>Sex: {cat.sex}</p>
+          <p>Descripcion: {cat.description}</p>
+          <p>Peso: {cat.weight} Kg.</p>
+          <p>Edad: {cat.age} years</p>
+          <p>Sexo: {cat.sex}</p>
 
-          <img className="imgtmbl" src={cat.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
+          <img className="imgtmbl" src={cat.pictures[0]} />  <button  onClick={handleAdopt}>ADOPTADO!!!</button>
 
         </>
       ) : (
@@ -56,11 +56,11 @@ function CatDetails() {
       )}
 
       <Link to="/cats">
-        <button>Back to list</button>
+        <button>Volver al listado</button>
       </Link>
 
       <Link to={`/cats/edit/${catId}`}>
-        <button>Edit Cat</button>
+        <button>Editar Gato</button>
       </Link>
     </div>
   );

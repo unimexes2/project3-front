@@ -123,24 +123,24 @@ console.log(body)
         <div className="addForm">
          
           <div className="selectAnimal">
-            <label>Select add new Cat or Dog:</label>
+            <label>Selecciona Gato o Perro:</label>
             <select value={type} onChange={handleSelect}>
-              <option value="dog" >Dog</option>
-              <option value="cat">Cat</option>
+              <option value="dog" >Perro</option>
+              <option value="cat">Gato</option>
             </select>
           </div>
 
 
           <div className="selectSex">
-            <label>Select Sex</label>
+            <label>Selecciona Sexo</label>
             <select value={sex} onChange={handleSelectSex}>
-              <option value="hembra">Female</option>
-              <option value="macho">Male</option>
+              <option value="hembra">Hembra</option>
+              <option value="macho">Macho</option>
             </select>
           </div>
 
           <div className="displayColumn">
-            <label className="labelLeftBold">Name: </label>
+            <label className="labelLeftBold">Nombre: </label>
             <input
               className="form-control"
               type="text"
@@ -150,7 +150,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Breed: </label>
+            <label className="labelLeftBold">Raza: </label>
             <input
               className="form-control"
               type="text"
@@ -160,7 +160,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Age: </label>
+            <label className="labelLeftBold">Edad: </label>
             <input
               className="form-controlTA"
               type="number"
@@ -170,7 +170,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Weight </label>
+            <label className="labelLeftBold">Peso: </label>
             <input
               className="form-controlTA"
               type="number"
@@ -183,7 +183,7 @@ console.log(body)
        
 
           <div className="displayColumn">
-            <label className="labelLeftBold">Description: </label>
+            <label className="labelLeftBold">Descripcion: </label>
             <textarea
               className="form-textarea"
               type="text"
@@ -193,7 +193,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Admition Date: </label>
+            <label className="labelLeftBold">Fecha de Admision: </label>
             <input
               className="form-control"
               type="date"
@@ -213,7 +213,7 @@ console.log(body)
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">Pictures: </label>
+            <label className="labelLeftBold">Fotos: </label>
 
             <input
               className="form-upload"
@@ -227,7 +227,7 @@ console.log(body)
 
 
 
-          <label>Your pictures</label>
+          <label>Fotos cargadas...</label>
 
 
 
@@ -249,7 +249,7 @@ console.log(body)
 
         </div>
         <button type="submit" className="btn-success">
-          Save to server
+          Guardar en server
         </button>
       </form>
 
