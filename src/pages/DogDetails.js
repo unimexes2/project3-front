@@ -35,8 +35,21 @@ function DogDetails() {
     <div className="dogDetails">
       {dog ? (
         <div className="dogDetails">
-          <div>
+                  <div>
+
+         <h1 style={{color:"white"}} >{dog.name}</h1>
+        
+        <h6>Raza:{dog.breed}</h6>
+     
+   
+      
+      <h6>Peso: {dog.weight} Kg.</h6>
+      <h6>Edad: {dog.age} years</h6>
+      <h6>Sexo: {dog.sex}</h6>
+      
           <img className="imgtmbl" src={dog.pictures[0]} />{" "}
+          
+          <div>
           <button onClick={handleAdopt}>ADOPTADO!!!</button>
           <Link to="/dogs">
         <button>Volver al listado</button>
@@ -46,16 +59,15 @@ function DogDetails() {
         <button>Editar Perro</button>
       </Link>
       </div>
-          <div style={{width:600, height:400}}> 
-          <h1>Nombre: {dog.name}</h1>
-        
-            <h6>Raza:{dog.breed}</h6>
+      
+      
+      </div>
+
          
-          <h6></h6>
-          <h6>Descripcion: {dog.description}</h6>
-          <h6>Peso: {dog.weight} Kg.</h6>
-          <h6>Edad: {dog.age} years</h6>
-          <h6>Sexo: {dog.sex}</h6>
+      
+          <div style={{width:600, height:400}}> 
+          
+          <h1 style={{color:"white"}}>Descripcion:</h1> <p>{dog.description}</p>
           </div>
          
 
