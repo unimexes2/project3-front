@@ -50,7 +50,7 @@ console.log(isLoggedIn)
            
             <Nav.Link href="/donate" className="menulink">DONACIONES</Nav.Link>
             <Nav.Link href="/map" className="menulink"> UBICACION </Nav.Link>
-            <Nav.Link href="/login" className="menulink"> CONTACTOS </Nav.Link>
+            <Nav.Link href="/contacts" className="menulink"> CONTACTOS </Nav.Link>
           </Nav>
     
       </Navbar>

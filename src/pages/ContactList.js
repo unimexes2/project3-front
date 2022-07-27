@@ -5,26 +5,26 @@ import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
 
-function Stories() {
+function ContactList() {
+    console.log("hello")
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-  var [stories, setStories] = useState([]);
+  var [contacts, setContacts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/stories")
+      .get("http://localhost:3000/contacts")
       .then((response) => {
 
       
-        setStories([...response.data]);
-        
+        setContacts([...response.data]);
       });
 
 
     }, []);
 
-    const deleteStorie = (id) => {
+    const deleteContact = (id) => {
       console.log(id, "llega");
       axios
-        .delete(`http://localhost:3000/stories/` + id.target.id)
+        .delete(`http://localhost:3000/contacts/` + id.target.id)
         .then(() => {})
         .catch((err) => console.log(err));
     };
@@ -32,19 +32,19 @@ function Stories() {
     return (
       
       <div style={{ display: 'flex' ,flexDirection:"column"}}>
-
+<h1 style={{backgroundColor:"#3498DB" }} >CONTACTOS</h1>
 
 
 <div className="list-group" style={{ height: '600px', display: 'flex', flexDirection: 'row', flexWrap: "wrap" }}>
 
-{stories.map((story) => {
+{contacts.map((contact) => {
 
 
   return (   
 
-<form onSubmit={deleteStorie} id={story._id}>
+<form onSubmit={deleteContact} id={contact._id}>
 <div className="w3-container"style={{margin:"20px",backgroundColor:"#3498DB",color:"white" }}>
-<h1 style={{backgroundColor:"#3498DB" }} >{story.header}</h1>
+<h1 style={{backgroundColor:"#3498DB" }} >{contact.header}</h1>
 </div>
 
 <div className="w3-content" >
@@ -56,12 +56,13 @@ function Stories() {
 </div>
 <div className="w3-twothird w3-container">
 
-  <p>
-  {story.description}
-  </p>
+  <p>Nombre: {contact.firstName}</p>
+  <p>Apellido: {contact.lastName}</p>
+  <p>Email: {contact.email}</p>
+  <p>Telefono: {contact.phone}</p>
 </div>
 
-{story.pictures.map((pic) => {
+{contact.foto.map((pic) => {
 
 
 
@@ -93,7 +94,7 @@ return (
       
 
       {isLoggedIn
-?(<button type="submit">Delete hisrory</button>
+?(<button type="submit">Delete Contact</button>
 
 ):<></>}
       </div>
@@ -144,5 +145,5 @@ return (
     );
   }
   
-  export default Stories;
+  export default ContactList;
   

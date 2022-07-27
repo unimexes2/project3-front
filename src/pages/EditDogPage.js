@@ -77,7 +77,7 @@ function EditDogPage() {
           <option value="macho">Male</option>
         </select>
 
-        <label>Breed:</label>
+        <label>Weight:</label>
         <input
           type="number"
           name="weight"
