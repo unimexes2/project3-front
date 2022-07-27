@@ -52,7 +52,7 @@ function App() {
 					<Route	exact path="/addonation" element={	<AdDonation />	}/>
 					<Route	exact path="/donate" element={	<Donation />	}/>
 					<Route	exact path="/cats" element={ <CatsList /> }	/>
-    				<Route	exact path="/cat/:catId" element={<PrivateRoute> <CatDetails /> </PrivateRoute>}/>
+    				<Route	exact path="/cat/:catId" element={<CatDetails />}/>
     				<Route	exact path="/cats/edit/:catId" element={<PrivateRoute> <EditCatPage /> </PrivateRoute>}/>
 
 					<Route	exact path="/dogs" element={<DogsList />} />
@@ -62,7 +62,7 @@ function App() {
 		            <Route path="/contacts/edit/:contactId" element={<PrivateRoute> <EditContactPage /> </PrivateRoute>} />
 
 					
-                    <Route exact path="/dog/:dogId" element={<PrivateRoute> <DogDetails /> </PrivateRoute>} />
+                    <Route exact path="/dog/:dogId" element={<DogDetails /> } />
 		            <Route path="/dogs/edit/:dogId" element={<PrivateRoute> <EditDogPage /> </PrivateRoute>} />
 
 					<Route	exact path="/dogadopted" element={<DogsAdopted />}/>

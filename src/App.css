@@ -87,8 +87,8 @@ flex-direction: column;
 
 
 .menulink{
-  color:#984706;
-  color: blue;
+ 
+
   font-weight: bold;
   font-size: 250%;
   margin:5px;
@@ -225,7 +225,7 @@ a{
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  background-color: #61dafb;
+  background-color: #1DA1F2;
 }
 
 
