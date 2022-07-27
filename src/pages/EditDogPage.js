@@ -1,43 +1,42 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function EditDogPage() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [age, setAge] = useState(0);
+  const [sex, setSex] = useState("");
   const [weight, setWeight] = useState(0);
   const [description, setDescription] = useState("");
 
-  const { dogId } = useParams();      
-  const navigate = useNavigate();   
+  const { dogId } = useParams();
+  const navigate = useNavigate();
 
-  useEffect(() => {                                  
+  useEffect(() => {
     axios
       .get(`http://localhost:3000/dogs/${dogId}`)
       .then((response) => {
-
         const oneDog = response.data;
         setName(oneDog.name);
         setBreed(oneDog.breed);
         setAge(oneDog.age);
+        setSex(oneDog.sex);
         setWeight(oneDog.weight);
         setDescription(oneDog.description);
       })
       .catch((error) => console.log(error));
-    
   }, [dogId]);
 
-  const handleFormSubmit = (e) => {                     
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { name, breed, age, weight, description };
- 
+    const requestBody = { name, breed, age, sex, weight, description };
+
     axios
       .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
       .then((response) => {
-
-        navigate(`/dogs/${dogId}`)
-        navigate(`/dog/${dogId}`)
+        navigate(`/dogs/${dogId}`);
+        navigate(`/dog/${dogId}`);
       });
   };
 
@@ -69,6 +68,14 @@ function EditDogPage() {
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
+
+        <label>Sex:</label>
+        <select value={sex} onChange={(e) => setSex(e.target.value)}>
+          <option value="hembra" defaultValue>
+            Female
+          </option>
+          <option value="macho">Male</option>
+        </select>
 
         <label>Breed:</label>
         <input

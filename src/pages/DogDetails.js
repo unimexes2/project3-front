@@ -16,6 +16,7 @@ function DogDetails() {
       })
       .catch((error) => console.log(error));
   }
+
   function handleAdopt(){
     let isAdopted= true;
     const requestBody = { isAdopted };
@@ -26,9 +27,6 @@ function DogDetails() {
       navigate(`/dogs`)
     });
 };
-   
-
-  
 
    useEffect(()=> {
     getDog(dogId);
@@ -46,9 +44,9 @@ function DogDetails() {
                     <h6>{dog.breed}</h6>
 
           <p>Description: {dog.description}</p>
-          <p>Weight: {dog.weight}</p>
-          <p>Age: {dog.age}</p>
-
+          <p>Weight: {dog.weight} Kg.</p>
+          <p>Age: {dog.age} years</p>
+          <p>Sex: {dog.sex}</p>
           
           <img className="imgtmbl" src={dog.pictures[0]} />  <button  onClick={handleAdopt}>YA ADOPTED</button>
 
