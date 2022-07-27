@@ -19,13 +19,17 @@ import DogsList from './pages/dogs';
 import DogDetails from './pages/DogDetails';
 import EditDogPage from './pages/EditDogPage'
 import DogsAdopted from './pages/adoptedDog';
-
+import Donation from './pages/Donation';
 import AdDonation from './pages/AddDonation';
 
 import AddContact from './pages/Addcontact';
 import ContactList from './pages/ContactList';
+
 import ContactDetails from './pages/ContactDetails';
 import EditContactPage from './pages/EditContactPage';
+
+
+import AdSettings from './pages/Settings';
 
 
 
@@ -43,8 +47,10 @@ function App() {
 					<Route exact path="/addmap" element={<AdMap />} />
 					<Route exact path="/stories" element={<Stories />} />
 					<Route exact path="/addstories" element={<AdStories />} />
+					<Route exact path="/settings" element={<AdSettings />} />
 					<Route	exact path="/map" element={	<Map />	}/>
 					<Route	exact path="/addonation" element={	<AdDonation />	}/>
+					<Route	exact path="/donate" element={	<Donation />	}/>
 					<Route	exact path="/cats" element={ <CatsList /> }	/>
     				<Route	exact path="/cat/:catId" element={<PrivateRoute> <CatDetails /> </PrivateRoute>}/>
     				<Route	exact path="/cats/edit/:catId" element={<PrivateRoute> <EditCatPage /> </PrivateRoute>}/>

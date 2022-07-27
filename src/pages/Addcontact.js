@@ -112,7 +112,7 @@ console.log(body)
             <label className="labelLeftBold">Telefono: </label>
 
             <input
-              className="form-controlTA"
+              className="form-control"
               type="text"
               name="phone"
               onChange={(e) => setPhone(e.target.value)}
@@ -124,7 +124,7 @@ console.log(body)
             <label className="labelLeftBold">Email </label>
 
             <input
-              className="form-controlTA"
+              className="form-control"
               type="text"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -170,7 +170,7 @@ console.log(body)
           })}
 
         </div>
-        <button type="submit" className="btn-success">
+        <button type="submit" className="btn btn-primary" style={{margin :"auto" ,color:"white",  marginBottom:"10px"}}>
           Guardar en server
         </button>
       </form>
