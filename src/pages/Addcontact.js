@@ -3,12 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const AddContact = () => {
-
-
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
   const [foto, setFoto] = useState([])
   const fotoArr = [];
 

@@ -24,7 +24,13 @@ import AdDonation from './pages/AddDonation';
 
 import AddContact from './pages/Addcontact';
 import ContactList from './pages/ContactList';
+
+import ContactDetails from './pages/ContactDetails';
+import EditContactPage from './pages/EditContactPage';
+
+
 import AdSettings from './pages/Settings';
+
 
 
 function App() {
@@ -52,6 +58,9 @@ function App() {
 					<Route	exact path="/dogs" element={<DogsList />} />
 					<Route	exact path="/addcontact" element={ <AddContact /> }	/>
 					<Route	exact path="/contacts" element={ <ContactList /> }	/>
+					<Route	exact path="/contacts/:contactId" element={ <ContactDetails /> }	/>
+		            <Route path="/contacts/edit/:contactId" element={<PrivateRoute> <EditContactPage /> </PrivateRoute>} />
+
 					
                     <Route exact path="/dog/:dogId" element={<PrivateRoute> <DogDetails /> </PrivateRoute>} />
 		            <Route path="/dogs/edit/:dogId" element={<PrivateRoute> <EditDogPage /> </PrivateRoute>} />
