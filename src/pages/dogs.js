@@ -186,16 +186,18 @@ function DogsList(props) {
                   <div className="w3-third">
                     <Link to={"/dog/" + dog._id}>
                       <img
-                        src={dog.pictures[0]}
-                        style={{ width: "100%", minheight: "200px" }}
+                        src={dog.pictures[0]} 
+                        style={{ width: "100%", minheight: "200px",boxShadow: "10px 10px 5px lightblue" }}
                       />
                     </Link>
                   </div>
                   <div className="w3-twothird w3-container">
+                  <div style={{textTransform: "uppercase"}}>
                     <h6>Raza: {dog.breed}</h6>
                     <h6>Peso: {dog.weight} Kg.</h6>
                     <h6>Edad: {dog.age} years</h6>
                     <h6>Sexo: {dog.sex}</h6>
+                    </div>
                     <p>{dog.description}</p>
                   </div>
                 </div>
@@ -204,7 +206,7 @@ function DogsList(props) {
               <div>
                 <h6></h6>
 
-                {isLoggedIn ? <button type="submit">Borrar Perro</button> : <></>}
+                {isLoggedIn ? <button className="btn btn-danger" style={{ margin:"10px" , fontFamily:"fantasy"}} type="submit">Borrar Perro</button> : <></>}
               </div>
             </form>
           );

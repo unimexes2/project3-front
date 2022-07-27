@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "./../context/auth.context";
+import { useContext } from "react";
 
 function DogDetails() {
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [dog, setDog] = useState(null);
   const { dogId } = useParams();
@@ -46,20 +49,26 @@ function DogDetails() {
       <h6>Peso: {dog.weight} Kg.</h6>
       <h6>Edad: {dog.age} years</h6>
       <h6>Sexo: {dog.sex}</h6>
-      
-          <img className="imgtmbl" src={dog.pictures[0]} />{" "}
+      {dog.pictures.map((elem)=>{
+       return <img className="imgtmbl" src={elem} />
+      })}
           
+         
+         
+         
+         
+          {isLoggedIn ?   
           <div>
-          <button onClick={handleAdopt}>ADOPTADO!!!</button>
+          <button className="btn btn-success" style={{color:"white",  margin:"10px" , fontFamily:"fantasy"}} onClick={handleAdopt}>ADOPTADO</button>
           <Link to="/dogs">
-        <button>Volver al listado</button>
+        <button className="btn btn-warning" style={{ margin:"10px" , fontFamily:"fantasy"}}>Volver al listado</button>
       </Link>
 
       <Link to={`/dogs/edit/${dogId}`}>
-        <button>Editar Perro</button>
+        <button className="btn btn-primary" style={{color:"white",  margin:"10px" , fontFamily:"fantasy"}}>Editar Perro</button>
       </Link>
       </div>
-      
+               :<></>}
       
       </div>
 

@@ -188,15 +188,17 @@ function CatsList(props) {
                   <Link to={"/cat/" + cat._id}>
                       <img
                         src={cat.pictures[0]}
-                        style={{ width: "100%", minheight: "200px" }}
+                        style={{ width: "100%", minheight: "200px",boxShadow: "10px 10px 5px lightblue" }}
                       />
                     </Link>
                   </div>
-                  <div className="w3-twothird w3-container">
+                  <div  className="w3-twothird w3-container">
+                    <div style={{textTransform: "uppercase"}}>
                     <h6>Raza: {cat.breed}</h6>
                     <h6>Peso: {cat.weight} Kg.</h6>
                     <h6>Edad: {cat.age} years</h6>
                     <h6>Sexo: {cat.sex}</h6>
+                    </div>
                     <p>{cat.description}</p>
                   </div>
                 </div>
@@ -205,7 +207,7 @@ function CatsList(props) {
               <div>
                 <h6></h6>
 
-                {isLoggedIn ? <button type="submit">Borrar Gato</button> : <></>}
+                {isLoggedIn ? <button className="btn btn-danger" style={{ color:"white",margin:"10px" , fontFamily:"fantasy"}} type="submit">Borrar Gato</button> : <></>}
               </div>
             </form>
           );
