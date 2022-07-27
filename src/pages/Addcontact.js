@@ -29,7 +29,11 @@ console.log(body)
 
     axios.post("http://localhost:3000/addcontact" , body).then((response) => {
       console.log(response, "resp")
-     
+      setLastName("")
+      setPhone("")
+      setEmail("")
+      setFirstName("")
+      setFoto([])
     });
   };
   const handleFileUpload = (e) => {
@@ -45,9 +49,8 @@ console.log(body)
         console.log("server says", response)
         fotoArr.push(response.data.fileUrl)
         setFoto(foto => [...foto, response.data.fileUrl])
-
       }
-
+        
       )
       .catch(err => console.log("Error while uploading the file: ", err));
   };
@@ -75,7 +78,7 @@ console.log(body)
 
 
     <div className="inputreturn">
-      <form className="addanimal" onSubmit={handleSubmit}>
+      <form className="addcontact" onSubmit={handleSubmit}>
        
         <div className="addForm">
          
@@ -83,41 +86,49 @@ console.log(body)
 
 
           <div className="displayColumn">
-            <label className="labelLeftBold">firstName: </label>
+
+            <label className="labelLeftBold">Nombre: </label>
+
             <input
               className="form-control"
               type="text"
-              name="name"
+              name="firstName"
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">lastName: </label>
+
+            <label className="labelLeftBold">Apellido: </label>
+
             <input
               className="form-control"
               type="text"
-              name="breed"
+              name="lastName"
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">phone: </label>
+
+            <label className="labelLeftBold">Telefono: </label>
+
             <input
               className="form-controlTA"
               type="text"
-              name="age"
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
             />
           </div>
           <div className="displayColumn">
-            <label className="labelLeftBold">email </label>
+
+            <label className="labelLeftBold">Email </label>
+
             <input
               className="form-controlTA"
               type="text"
-              name="weight"
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -126,7 +137,7 @@ console.log(body)
  
        
           <div className="displayColumn">
-            <label className="labelLeftBold">Pictures: </label>
+            <label className="labelLeftBold">Foto: </label>
 
             <input
               className="form-upload"
@@ -140,7 +151,7 @@ console.log(body)
 
 
 
-          <label>Your pictures</label>
+          <label>Foto cargada...</label>
 
 
 
@@ -162,7 +173,7 @@ console.log(body)
 
         </div>
         <button type="submit" className="btn-success">
-          Save to server
+          Guardar en server
         </button>
       </form>
 

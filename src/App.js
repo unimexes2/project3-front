@@ -23,6 +23,7 @@ import DogsAdopted from './pages/adoptedDog';
 import AdDonation from './pages/AddDonation';
 
 import AddContact from './pages/Addcontact';
+import ContactList from './pages/ContactList';
 
 
 
@@ -48,6 +49,7 @@ function App() {
 
 					<Route	exact path="/dogs" element={<DogsList />} />
 					<Route	exact path="/addcontact" element={ <AddContact /> }	/>
+					<Route	exact path="/contacts" element={ <ContactList /> }	/>
 					
                     <Route exact path="/dog/:dogId" element={<PrivateRoute> <DogDetails /> </PrivateRoute>} />
 		            <Route path="/dogs/edit/:dogId" element={<PrivateRoute> <EditDogPage /> </PrivateRoute>} />

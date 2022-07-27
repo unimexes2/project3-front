@@ -76,6 +76,19 @@ function CatsList(props) {
     setCats(searchResult);
   };
 
+  const doSearchBySex = (element) => {
+    cats = [...search];
+    console.log("search", search);
+   if( element!=="todos"){
+    let searchResult = cats.filter((cat) => {
+  if(cat.sex==element){return element}     
+      })
+   
+
+    setCats(searchResult);}
+   else{ setCats(cats)}
+  };
+
   const deleteCat = (id) => {
     console.log(id, "llega");
     axios
@@ -134,6 +147,18 @@ function CatsList(props) {
           <option value="joven">Joven</option>
           <option value="adulto">Adulto</option>
         </select>
+
+        <label>Buscar por sexo</label>
+        <select
+          id="sex"
+          list="sex"
+          name="Sex"
+          onChange={(e) => doSearchBySex(e.target.value)}
+        >
+          <option value="todos">Todos</option>
+          <option value="hembra">Hembra</option>
+          <option value="macho">Macho</option>
+        </select>
       </div>
 
       <div
@@ -168,10 +193,10 @@ function CatsList(props) {
                     </Link>
                   </div>
                   <div className="w3-twothird w3-container">
-                    <h6>Breed: {cat.breed}</h6>
-                    <h6>Weight: {cat.weight} Kg.</h6>
-                    <h6>Age: {cat.age} years</h6>
-                    <h6>Sex: {cat.sex}</h6>
+                    <h6>Raza: {cat.breed}</h6>
+                    <h6>Peso: {cat.weight} Kg.</h6>
+                    <h6>Edad: {cat.age} years</h6>
+                    <h6>Sexo: {cat.sex}</h6>
                     <p>{cat.description}</p>
                   </div>
                 </div>
@@ -180,7 +205,7 @@ function CatsList(props) {
               <div>
                 <h6></h6>
 
-                {isLoggedIn ? <button type="submit">Delete Cat</button> : <></>}
+                {isLoggedIn ? <button type="submit">Borrar Gato</button> : <></>}
               </div>
             </form>
           );
