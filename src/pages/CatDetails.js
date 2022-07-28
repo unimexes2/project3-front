@@ -40,6 +40,10 @@ function CatDetails() {
   }, []);
 
   return (
+
+
+
+    
     <div className="dogDetails">
     {cat ? (
       <div className="dogDetails">
@@ -70,7 +74,7 @@ function CatDetails() {
     </Link>
 
     <Link to={`/cats/edit/${catId}`}>
-      <button className="btn btn-primary" style={{color:"white",  margin:"10px" , fontFamily:"fantasy"}}>Editar Perro</button>
+      <button className="btn btn-primary" style={{color:"white",  margin:"10px" , fontFamily:"fantasy"}}>Editar Gatto</button>
     </Link>
     </div>
              :<></>}

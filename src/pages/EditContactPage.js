@@ -13,13 +13,12 @@ function EditContactPage() {
 
   useEffect(() => {
     axios
-      .get(API_URL+"/contacts/${contactId}")
+      .get(API_URL+"/contacts/"+contactId)
       .then((response) => {
         const oneContact = response.data;
         setFirstName(oneContact.firstName);
         setLastName(oneContact.lastName);
-        setPhone(oneContact.phone);
-        setEmail(oneContact.email);
+        setPhone(oneContact.phone);        setEmail(oneContact.email);
       })
       .catch((error) => console.log(error));
   }, [contactId]);
