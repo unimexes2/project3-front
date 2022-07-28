@@ -75,6 +75,9 @@ const AdSettings = () => {
 
     return (<div className="inputreturn">
         <form className="displaystory" onSubmit={handleSubmit}>
+         
+         <h6>SITE LOGO CHANGE</h6>
+         
            <input
               className="form-upload"
               type="file"
@@ -82,14 +85,14 @@ const AdSettings = () => {
               accept="image/png, image/jpeg"
               onChange={(e) => handleFileUpload(e)}
             />
-  
+  {foto?
               <div className="img-wrap" id={foto}>
                 <span
                   onClick={deletePrevImg} className="close" id={foto}>&times;</span>
                 <img className="preview" src={foto} />
 
-              </div>
-
+              </div>:<></>
+               }
 
 
 <button type="submit" className="btn btn-primary" style={{margin :"auto" ,color:"white",  marginBottom:"10px"}}>
