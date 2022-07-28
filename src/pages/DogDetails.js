@@ -3,8 +3,9 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "./../context/auth.context";
 import { useContext } from "react";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function DogDetails() {
+  console.log("srwertwertwer")
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [dog, setDog] = useState(null);
@@ -12,7 +13,7 @@ function DogDetails() {
 
   function getDog(id) {
     axios
-      .get("http://localhost:3000/dogs/" + id)
+      .get(API_URL+"/dogs/" + id)
       .then((response) => {
         const oneDog = response.data;
         setDog(oneDog);
@@ -24,7 +25,7 @@ function DogDetails() {
     let isAdopted = true;
     const requestBody = { isAdopted };
     axios
-      .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
+      .put(API_URL+"/dogs/"+dogId, requestBody)
       .then((response) => {
         navigate(`/dogs`);
       });

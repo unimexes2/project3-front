@@ -13,11 +13,12 @@ function MyNavbar() {
 const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
 const [logo, setLogo] = useState(null);
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 useEffect(() => {
 axios
-      .get("http://localhost:3000/logo/")
+      .get(API_URL+"/logo/")
       .then((response) => {
         
         const logoObj = response.data[response.data.length-1];
@@ -57,7 +58,7 @@ return (
             <NavDropdown className="menulink" title="ADOPTADOS" id="basic-nav-dropdown">
               <NavDropdown.Item className="menulink"href="/dogadopted" >PERROS</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item className="menulink" href="#action/3.3">GATOS</NavDropdown.Item>
+              <NavDropdown.Item className="menulink" href="/catadopted">GATOS</NavDropdown.Item>
             </NavDropdown>
 
 

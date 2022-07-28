@@ -30,10 +30,11 @@ import EditContactPage from './pages/EditContactPage';
 
 
 import AdSettings from './pages/Settings';
-
+import CatsAdopted from './pages/Catsadopted';
 
 
 function App() {
+	
 	return (
 		<div>
 			<MyNavbar />
@@ -66,7 +67,7 @@ function App() {
 		            <Route path="/dogs/edit/:dogId" element={<PrivateRoute> <EditDogPage /> </PrivateRoute>} />
 
 					<Route	exact path="/dogadopted" element={<DogsAdopted />}/>
-
+					<Route	exact path="/catadopted" element={<CatsAdopted />}/>
 					<Route exact path="/signup"	element={ <AnonRoute>
 						<SignupPage />
 						</AnonRoute>

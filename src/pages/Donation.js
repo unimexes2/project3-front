@@ -5,14 +5,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function Donation() {
   console.log("hello");
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   var [contacts, setContacts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/donations").then((response) => {
+    axios.get(API_URL+"/donations").then((response) => {
       setContacts([...response.data]);
     });
   }, []);
@@ -20,7 +20,7 @@ function Donation() {
   const deleteContact = (id) => {
     console.log(id, "llega");
     axios
-      .delete(`http://localhost:3000/contacts/` + id.target.id)
+      .delete(API_URL+"/contacts/" + id.target.id)
       .then(() => {})
       .catch((err) => console.log(err));
   };

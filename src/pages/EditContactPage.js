@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function EditContactPage() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -13,7 +13,7 @@ function EditContactPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/contacts/${contactId}`)
+      .get(API_URL+"/contacts/${contactId}")
       .then((response) => {
         const oneContact = response.data;
         setFirstName(oneContact.firstName);
@@ -29,7 +29,7 @@ function EditContactPage() {
     const requestBody = { firstName, lastName, phone, email };
 
     axios
-      .put(`http://localhost:3000/contacts/${contactId}`, requestBody)
+      .put(API_URL+"/contacts/${contactId}", requestBody)
       .then((response) => {
         navigate(`/contacts/${contactId}`);
         navigate(`/contacts`);

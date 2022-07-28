@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 const AddContact = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,7 +25,7 @@ console.log(body)
 
 
 
-    axios.post("http://localhost:3000/addcontact" , body).then((response) => {
+    axios.post(API_URL+"/addcontact" , body).then((response) => {
       console.log(response, "resp")
       setLastName("")
       setPhone("")
@@ -38,7 +38,7 @@ console.log(body)
     // console.log("The file to be uploaded is: ", e.target.files[0]);
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.files[0]);
-    axios.post("http://localhost:3000/upload", uploadData, {
+    axios.post(API_URL+"/upload", uploadData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

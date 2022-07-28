@@ -2,11 +2,12 @@ import CarouselBasement from "../components/carousel";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import protectlogo from "../pictures/protectora.png";
+const API_URL = process.env.REACT_APP_API_URL;
 function Map() {
   const [mapId, setMap] = useState(null);
   const [desc, setDesc] = useState(null);
   useEffect(() => {
-    axios.get("http://localhost:3000/map").then((response) => {
+    axios.get(API_URL+"/map").then((response) => {
       debugger;
       console.log(response.data[0].mapCode, "response");
       setDesc(response.data[0].description);

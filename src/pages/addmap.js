@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
 const AdMap =()=>{
 
     const [mapCode, setMapCode] = useState("");
@@ -21,7 +22,7 @@ const AdMap =()=>{
          
         };
     
-        axios.post("http://localhost:3000/" + addStr, body).then((response) => {
+        axios.post(API_URL+ addStr, body).then((response) => {
             console.log(response, "resp")
             setDescription("");
             setMapCode("");

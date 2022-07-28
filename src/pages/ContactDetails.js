@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function ContactDetails() {
   const navigate = useNavigate();
   const [contact, setContact] = useState(null);
@@ -9,7 +9,7 @@ function ContactDetails() {
 
   function getContact(id) {
     axios
-      .get("http://localhost:3000/contacts/" + id)
+      .get(API_URL +"/contacts/" + id)
       .then((response) => {
         const oneContact = response.data;
         setContact(oneContact);

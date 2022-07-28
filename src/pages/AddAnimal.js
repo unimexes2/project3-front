@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 const AddAnimal = () => {
 
   const [name, setName] = useState("");
@@ -56,7 +56,7 @@ console.log(body)
 
 
 
-    axios.post("http://localhost:3000/" + addStr, body).then((response) => {
+    axios.post(API_URL + addStr, body).then((response) => {
       console.log(response, "resp")
       setType("")
       setName("");
@@ -71,13 +71,13 @@ console.log(body)
       setSex([])
     });
   };
-
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleFileUpload = (e) => {
     // console.log("The file to be uploaded is: ", e.target.files[0]);
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.files[0]);
-    axios.post("http://localhost:3000/upload", uploadData, {
+    axios.post(API_URL+"/upload", uploadData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

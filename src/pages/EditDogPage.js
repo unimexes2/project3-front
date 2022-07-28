@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function EditDogPage() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
@@ -15,7 +15,7 @@ function EditDogPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/dogs/${dogId}`)
+      .get(API_URL+"/dogs/${dogId}")
       .then((response) => {
         const oneDog = response.data;
         setName(oneDog.name);
@@ -33,7 +33,7 @@ function EditDogPage() {
     const requestBody = { name, breed, age, sex, weight, description };
 
     axios
-      .put(`http://localhost:3000/dogs/${dogId}`, requestBody)
+      .put(API_URL+"/dogs/${dogId}", requestBody)
       .then((response) => {
         navigate(`/dogs/${dogId}`);
         navigate(`/dog/${dogId}`);

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
 const AdDonation = () => {
     const [foto, setFoto] = useState([])
     const fotoArr = [];
@@ -25,7 +26,7 @@ const AdDonation = () => {
         };
 
 
-    axios.post("http://localhost:3000/adddonation", body).then((response) => {
+    axios.post(API_URL+"/adddonation", body).then((response) => {
             console.log(response, "resp")
             setBankName("");
             setAccount("");

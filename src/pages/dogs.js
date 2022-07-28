@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function DogsList(props) {
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([]);
@@ -12,7 +12,7 @@ function DogsList(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/dogs").then((response) => {
+    axios.get(API_URL+"/dogs").then((response) => {
       setDogs([...response.data]);
       setSearch([...response.data]);
     });
@@ -92,7 +92,7 @@ function DogsList(props) {
   const deleteDog = (id) => {
     console.log(id, "llega");
     axios
-      .delete(`http://localhost:3000/dogs/` + id.target.id)
+      .delete(API_URL+"/dogs/" + id.target.id)
       .then(() => {})
       .catch((err) => console.log(err));
   };

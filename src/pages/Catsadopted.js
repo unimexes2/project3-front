@@ -6,7 +6,7 @@ import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
 const API_URL = process.env.REACT_APP_API_URL;
 
-function DogsAdopted(props) {
+function CatsAdopted(props) {
 console.log("zdgsdfxdf")
   var [dogs, setDogs] = useState([]);
   const [search, setSearch] = useState([])
@@ -15,7 +15,7 @@ console.log("zdgsdfxdf")
 
   useEffect(() => {
     axios
-      .get(API_URL+"/dogs")
+      .get(API_URL+"/cats")
       .then((response) => {
 
         setDogs([...response.data]);
@@ -213,4 +213,4 @@ console.log("zdgsdfxdf")
   )
 }
 
-export default DogsAdopted;
+export default CatsAdopted;

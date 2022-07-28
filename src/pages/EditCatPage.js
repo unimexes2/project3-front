@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function EditCatPage() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
@@ -15,7 +15,7 @@ function EditCatPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/cats/${catId}`)
+      .get(API_URL+"/cats/${catId}")
       .then((response) => {
         const oneCat = response.data;
         setName(oneCat.name);
@@ -33,7 +33,7 @@ function EditCatPage() {
     const requestBody = { name, breed, age, sex, weight, description };
 
     axios
-      .put(`http://localhost:3000/cats/${catId}`, requestBody)
+      .put(API_URL+"/cats/${catId}", requestBody)
       .then((response) => {
         navigate(`/cats/${catId}`);
         navigate(`/cat/${catId}`);

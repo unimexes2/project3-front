@@ -4,13 +4,13 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function Stories() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   var [stories, setStories] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/stories")
+      .get(API_URL+"/stories")
       .then((response) => {
 
       
@@ -24,7 +24,7 @@ function Stories() {
     const deleteStorie = (id) => {
       console.log(id, "llega");
       axios
-        .delete(`http://localhost:3000/stories/` + id.target.id)
+        .delete(API_URL+"/stories/" + id.target.id)
         .then(() => {})
         .catch((err) => console.log(err));
     };

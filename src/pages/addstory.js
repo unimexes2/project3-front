@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
 const AdStories = () => {
     const [foto, setFoto] = useState([])
     const fotoArr = [];
@@ -50,7 +51,7 @@ const AdStories = () => {
             pictures: foto
         };
 
-        axios.post("http://localhost:3000/" + addStr, body).then((response) => {
+        axios.post(API_URL + addStr, body).then((response) => {
             console.log(response, "resp")
             setDescription("");
             setHeader("");
@@ -65,7 +66,7 @@ const AdStories = () => {
         // console.log("The file to be uploaded is: ", e.target.files[0]);
         const uploadData = new FormData();
         uploadData.append("imageUrl", e.target.files[0]);
-        axios.post("http://localhost:3000/upload", uploadData, {
+        axios.post(API_URL+"/upload", uploadData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function CatsList(props) {
   var [cats, setCats] = useState([]);
   const [search, setSearch] = useState([]);
@@ -12,7 +12,7 @@ function CatsList(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/cats").then((response) => {
+    axios.get(API_URL+"/cats").then((response) => {
       setCats([...response.data]);
       setSearch([...response.data]);
     });
@@ -92,7 +92,7 @@ function CatsList(props) {
   const deleteCat = (id) => {
     console.log(id, "llega");
     axios
-      .delete(`http://localhost:3000/cats/` + id.target.id)
+      .delete(API_URL+`/cats/` + id.target.id)
       .then(() => {})
       .catch((err) => console.log(err));
   };

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import { Link } from "react-router-dom";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function ContactList() {
   console.log("hello");
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -12,7 +12,7 @@ function ContactList() {
   const { id } = useParams();
   
   useEffect(() => {
-    axios.get("http://localhost:3000/contacts").then((response) => {
+    axios.get(API_URL+"/contacts").then((response) => {
       setContacts([...response.data]);
     });
   }, []);
@@ -20,7 +20,7 @@ function ContactList() {
   const deleteContact = (id) => {
     console.log(id, "llega");
     axios
-      .delete(`http://localhost:3000/contacts/` + id.target.id)
+      .delete(API_URL+"/contacts/" + id.target.id)
       .then(() => {})
       .catch((err) => console.log(err));
   };
