@@ -12,7 +12,7 @@ function MyNavbar() {
   // the values from AuthContext.Provider `value` prop
 const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-const [logo, setLogo] = useState(null);
+const [logo, setLogo] = useState([]);
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -21,9 +21,9 @@ axios
       .get(API_URL+"/logo/")
       .then((response) => {
         
-        const logoObj = response.data[response.data.length-1];
-       console.log(logoObj)
-       let logo=logoObj.navbarlogo
+      const logoObj = response.data[0].navbarlogo[0];
+     // console.log(logoObj,"respo")
+       let logo=logoObj;
         setLogo(logo);
       })
       .catch((error) => console.log(error));
@@ -108,7 +108,7 @@ return (
             </Nav.Link>
           
             <Nav.Link href="/settings" className="w3-bar-item w3-button">
-              SITE SETTINGS
+              MAIN PAGE SETTINGS
             </Nav.Link>
             </Navbar>
 
