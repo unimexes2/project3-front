@@ -89,7 +89,7 @@ const AdStories = () => {
 
 
     return (<div className="inputreturn">
-        <form className="displaystory" onSubmit={handleSubmit}>
+        <form style={{  textTransform: "uppercase", margin:"auto"} }className="displaystory" onSubmit={handleSubmit}>
           
             <div className="displaystory" style={{ "maxWidth": "600px" }}>
                 <label className="labelLeftBold">Titulo: </label>

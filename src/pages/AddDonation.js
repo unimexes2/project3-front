@@ -41,8 +41,21 @@ const AdDonation = () => {
     return (<div className="inputreturn">
         <form className="displaystory" onSubmit={handleSubmit}>
           
+         
             <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">account</label>
+                <label className="labelLeftBold">BANK NAME</label>
+                <input
+                    className="form-control"
+                    type="text"             
+                    name="bankName"
+                    onChange={(e) => setBankName(e.target.value)}
+                    value={bankName}
+                />
+            </div>
+            
+            
+            <div className="displaystory" style={{ "maxWidth": "600px" }}>
+                <label className="labelLeftBold">ACCOUNT NUMBER</label>
                 <input
                     className="form-control"
                     type="text"             
@@ -51,17 +64,9 @@ const AdDonation = () => {
                     value={account}
                 />
             </div>
+            
             <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">bankName</label>
-                <input
-                    className="form-control"
-                    type="text"             
-                    name="bankName"
-                    onChange={(e) => setBankName(e.target.value)}
-                    value={bankName}
-                />
-            </div><div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">paypal</label>
+                <label className="labelLeftBold">PAYPAL (ENLASE A LA PAGINA DE RECAUDACION DE FONFOSS) </label>
                 <input
                     className="form-control"
                     type="text"             
@@ -70,7 +75,7 @@ const AdDonation = () => {
                     value={paypal}
                 />
             </div><div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">TEAMING NET</label>
+                <label className="labelLeftBold">TEAMING NET ANLACE AL PROYECTO</label>
                 <input
                     className="form-control"
                     type="text"             

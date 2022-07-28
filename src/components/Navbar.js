@@ -3,16 +3,38 @@ import { AuthContext } from "./../context/auth.context";  // <== IMPORT
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from "./../pictures/logosite.png"
+import { useState, useEffect } from "react";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import axios from "axios";
 function MyNavbar() {
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-console.log(isLoggedIn)
-  return (
+const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+
+const [logo, setLogo] = useState(null);
+
+
+useEffect(() => {
+axios
+      .get("http://localhost:3000/logo/")
+      .then((response) => {
+        
+        const logoObj = response.data[response.data.length-1];
+       console.log(logoObj)
+       let logo=logoObj.navbarlogo
+        setLogo(logo);
+      })
+      .catch((error) => console.log(error));
+  
+    }, []);
+
+
+
+
+
+
+return (
   
     <div>
     

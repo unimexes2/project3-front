@@ -119,7 +119,7 @@ console.log(body)
   return (
     <>
     <div className="inputreturn">
-      <form className="addanimal" onSubmit={handleSubmit}>
+      <form   style={{  textTransform: "uppercase"} } className="addanimal" onSubmit={handleSubmit}>
                
           <div className="selectAnimal">
             <label>Selecciona Gato o Perro:</label>

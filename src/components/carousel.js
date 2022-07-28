@@ -1,8 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
-import img from "./../pictures/carousel.jpg"
-
+import img1 from "./../pictures/1.jpg"
+import img2 from "./../pictures/2.jpg"
+import img3 from "./../pictures/3.jpg"
 function CarouselBasement() {
-    let img1 = img;
+
 
     return (
         <Carousel>
@@ -21,7 +22,7 @@ function CarouselBasement() {
             <Carousel.Item>
                 <img
                    className="d-block-w-100"
-                    src={img1}
+                    src={img2}
                     alt="Second slide"
                 />
 
@@ -31,7 +32,7 @@ function CarouselBasement() {
             <Carousel.Item>
                 <img
                     className="d-block-w-100"
-                    src={img1}
+                    src={img3}
                     alt="Third slide"
                 />
 

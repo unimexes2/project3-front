@@ -6,17 +6,17 @@ import React from "react";
 
 import axios from "axios";
 const AdSettings = () => {
-    const [foto, setFoto] = useState([])
+    const [foto, setFoto] = useState("")
     const fotoArr = [];
     const [fotoCarusel, setFotoCarusel] = useState([])
     const fotoArrCar = [];
 
 
-    const [header, setHeader] = useState("");
-    const [description, setDescription] = useState("");
-    const [contactPerson, setPerson] = useState("");
+    const [logo, setHeader] = useState("");
+    const [navbarlogo, setDescription] = useState("");
+   
 
-    let addStr = "addstory"
+    
 
     const deletePrevImg = ((event) => {
         console.log("event", event.target.id)
@@ -33,20 +33,19 @@ const AdSettings = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const body = {
-            header: header,
-            description: description,
-            contactPerson: contactPerson,
-            pictures: foto
+          navbarlogo: foto,
+           
         };
 
-        axios.post("http://localhost:3000/" + addStr, body).then((response) => {
+        axios.post("http://localhost:3000/settings", body).then((response) => {
             console.log(response, "resp")
-            setDescription("");
-            setHeader("");
-            setPerson("");
-            setFoto([])
+         
+            
 
         });
+
+        setFoto("")
+
     };
 
 
@@ -61,12 +60,9 @@ const AdSettings = () => {
         })
           .then(response => {
             console.log("server says", response)
-            fotoArr.push(response.data.fileUrl)
-            setFoto(foto => [...foto, response.data.fileUrl])
+            setFoto(response.data.fileUrl)
+          })
     
-          }
-    
-          )
           .catch(err => console.log("Error while uploading the file: ", err));
       };
     
@@ -79,55 +75,22 @@ const AdSettings = () => {
 
     return (<div className="inputreturn">
         <form className="displaystory" onSubmit={handleSubmit}>
-          
-            <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">Titulo: </label>
-                <textarea
-                    className="form-control2"
-                    type="text"             
-                    name="header"
-                    onChange={(e) => setHeader(e.target.value)}
-                    value={header}
-                />
-            </div>
-
-            <div className="displaystory" style={{ "maxWidth": "600px" }}>
-                <label className="labelLeftBold">Descripcion: </label>
-                <textarea
-                    rows="4"
-                    cols="50"
-                    className="form-control2"
-                    type="text"
-                    name="description"
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                    style={{ "heigth": "600px" }}
-                />
-            </div>
-
-        
-            <input
+           <input
               className="form-upload"
               type="file"
               name="pictures"
               accept="image/png, image/jpeg"
               onChange={(e) => handleFileUpload(e)}
             />
-  {foto.map((image) => {
-            return (
-              <div className="img-wrap" id={image}>
+  
+              <div className="img-wrap" id={foto}>
                 <span
-                  onClick={deletePrevImg} className="close" id={image}>&times;</span>
-                <img className="preview" src={image} />
+                  onClick={deletePrevImg} className="close" id={foto}>&times;</span>
+                <img className="preview" src={foto} />
 
               </div>
 
 
-            );
-
-
-
-          })}
 
 <button type="submit" className="btn btn-primary" style={{margin :"auto" ,color:"white",  marginBottom:"10px"}}>
                 Save to server

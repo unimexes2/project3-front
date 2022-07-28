@@ -76,9 +76,9 @@ console.log(body)
 
 
     <div className="inputreturn">
-      <form className="addcontact" onSubmit={handleSubmit}>
+      <form style={{  textTransform: "uppercase", margin:"auto"} } className="addcontact" onSubmit={handleSubmit}>
        
-        <div className="addForm">
+        <div  className="addForm">
          
       
 
