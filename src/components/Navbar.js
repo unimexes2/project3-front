@@ -110,6 +110,9 @@ return (
             <Nav.Link href="/settings" className="w3-bar-item w3-button">
               MAIN PAGE SETTINGS
             </Nav.Link>
+            <Nav.Link href="/users" className="w3-bar-item w3-button">
+              USERS 
+            </Nav.Link>
             </Navbar>
 
           </>)

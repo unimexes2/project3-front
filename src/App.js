@@ -31,7 +31,7 @@ import EditContactPage from './pages/EditContactPage';
 
 import AdSettings from './pages/Settings';
 import CatsAdopted from './pages/Catsadopted';
-
+import Users from './pages/users';
 
 function App() {
 	
@@ -42,15 +42,15 @@ function App() {
 			<div className="App">
 
 				<Routes>
-					<Route exact path="/add" element={<AddAnimal />} />
+					<Route exact path="/add" element={<PrivateRoute><AddAnimal /></PrivateRoute>} />
 
 					<Route exact path="/" element={<Main />} />
-					<Route exact path="/addmap" element={<AdMap />} />
+					<Route exact path="/addmap" element={<PrivateRoute><AdMap /></PrivateRoute>} />
 					<Route exact path="/stories" element={<Stories />} />
-					<Route exact path="/addstories" element={<AdStories />} />
-					<Route exact path="/settings" element={<AdSettings />} />
+					<Route exact path="/addstories" element={<PrivateRoute><AdStories /></PrivateRoute>} />
+					<Route exact path="/settings" element={<PrivateRoute><AdSettings /></PrivateRoute>} />
 					<Route	exact path="/map" element={	<Map />	}/>
-					<Route	exact path="/addonation" element={	<AdDonation />	}/>
+					<Route	exact path="/addonation" element={<PrivateRoute>	<AdDonation /></PrivateRoute>	}/>
 					<Route	exact path="/donate" element={	<Donation />	}/>
 					<Route	exact path="/cats" element={ <CatsList /> }	/>
     				<Route	exact path="/cat/:catId" element={<CatDetails />}/>
@@ -65,7 +65,7 @@ function App() {
 					
                     <Route exact path="/dog/:dogId" element={<DogDetails /> } />
 		            <Route path="/dogs/edit/:dogId" element={<PrivateRoute> <EditDogPage /> </PrivateRoute>} />
-
+					<Route path="/users" element={<PrivateRoute> <Users/> </PrivateRoute>} />
 					<Route	exact path="/dogadopted" element={<DogsAdopted />}/>
 					<Route	exact path="/catadopted" element={<CatsAdopted />}/>
 					<Route exact path="/signup"	element={ <AnonRoute>
