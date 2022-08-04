@@ -15,6 +15,15 @@ const Users = () => {
           
         });
       }, []);
+
+
+      const deleteUser = (id) => {
+        console.log(id, "llega");
+        axios
+          .delete(API_URL+"/user/" + id.target.id)
+          .then(() => {})
+          .catch((err) => console.log(err));
+      };
     
 
 
@@ -25,7 +34,14 @@ const Users = () => {
          <div style={{textTransform: "uppercase"}}>
                     
                   <h3>for user delete press the link </h3>
-                   <h3> <a href="#">{elem.email}</a></h3>
+                  {console.log(elem)}
+                   <h3><form id={elem._id} onSubmit={deleteUser}
+                                     
+                   > {elem.email}
+                   <button type="submit">Delete</button>
+                   </form>
+                   
+                   </h3>
                    <br/>
                    <br/>
                     </div>
